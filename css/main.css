@@ -177,7 +177,7 @@ iframe {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  padding: 15px;
+  padding: 0;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -191,7 +191,24 @@ iframe {
   margin-left: 0%;
 
 }
+.formcontainer 
+{
+  width: 100%;  
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 
+}
 
 /*------------------------------------------------------------------
 [ Form ]*/
@@ -469,6 +486,60 @@ iframe {
 .login100-social-item:hover {
   color: #fff;
   background-color: #333333;
+}
+/*****************footer************/
+.footer
+{
+  width: 100%;  
+  min-height: 50vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-color: rgba(255 ,255 , 255 , 0.6) ;
+  width: 100% ;
+  padding: 15px ;
+  margin: 150px 0 0 0;
+}
+.social-icons
+{
+  float: left;
+  
+}
+.social-icons a 
+{
+  margin-left: 15px;
+  font-size: 20px;
+  font-style: bold ; 
+}
+
+.social-icons i 
+{
+  margin-right: 15px;
+}
+.social-icons li 
+{
+  font-size: 25px;
+  border: 1px solid #CE28F9 ;
+  background-color: rgba(0 ,0 ,0 ,0.7);
+  padding: 0 15px 5px 15px;
+  float: left;
+  margin: 20px 15px 0px 0 ;
+  width: 80%;
+
+}
+
+.social-icons li:hover
+{
+  
+  background-color:  rgb(55, 16, 65);
 }
 
 /*//////////////////////////////////////////////////////////////////
