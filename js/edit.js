@@ -59,12 +59,8 @@ document.getElementById("addb").onclick=function(){
 
         }
 
-<<<<<<< HEAD
         if(document.getElementById("textchange4").value==="") {
             if ( document.getElementById("textchange5").value==="") 
-=======
-        if(document.getElementById("textchange4").value==="" && document.getElementById("textchange5").value==="") { 
->>>>>>> 041e23438c8d2d79a83fb06acc72d4c787222076
             document.getElementById('editf').disabled = true; 
             document.getElementById('sizef').disabled = true;
             document.getElementById('pricef').disabled = true; 
