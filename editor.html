@@ -136,14 +136,13 @@
         <div class="modal-body">
           <div class="input-group mb-3">
             <div class="input-group-prepend">
-              <span class="input-group-text" id="basic-addon1">@</span>
+              <span class="input-group-text" id="basic-addon1">Section Title</span>
             </div>
-            <input type="text" class="form-control" placeholder="Section title" aria-label="Username"
-              aria-describedby="basic-addon1" id="newSectionName">
+            <input type="text" onkeyup="success()" class="form-control" placeholder="Section title" id="newSectionName">
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal" id="addNewSection">Continue</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal" id="addNewSection" disabled>Continue</button>
         </div>
       </div>
     </div>
@@ -165,14 +164,14 @@
         <div class="modal-body">
           <div class="input-group mb-3">
             <div class="input-group-prepend">
-              <span class="input-group-text" id="basic-addon1">@</span>
+              <span class="input-group-text" id="basic-addon1">Target Section Name</span>
             </div>
-            <input type="text" class="form-control" id="targetSectionName" placeholder="Target Section Name"
+            <input type="text" class="form-control" onkeyup="success()" id="targetSectionName" placeholder="Target Section Name"
               aria-label="Username" aria-describedby="basic-addon1">
           </div>
 
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal" id="deleteSection">Continue</button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal" id="deleteSection" disabled>Continue</button>
           </div>
         </div>
       </div>
@@ -193,17 +192,17 @@
         <div class="modal-body">
           <div class="input-group mb-3">
             <div class="input-group-prepend">
-              <span class="input-group-text" id="basic-addon1">@</span>
+              <span class="input-group-text" id="basic-addon1">Description</span>
             </div>
-            <input type="text" class="form-control" placeholder="Description" aria-label="Username"
+            <input type="text" class="form-control" onkeyup="success()" id="Description" placeholder="Description" aria-label="Username"
               aria-describedby="basic-addon1">
           </div>
         </div>
         <!--***************************************************************-->
         <div class="modal-footer">
 
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-dismiss="modal"
-            data-target="#exampleModa13">Continue</button>
+          <button type="button" class="btn btn-primary" id="DescriptionButton" data-toggle="modal" data-dismiss="modal"
+            data-target="#exampleModa13" disabled>Continue</button>
         </div>
       </div>
     </div>
@@ -259,24 +258,24 @@
         <div class="modal-body">
           <div class="input-group mb-3">
             <div class="input-group-prepend">
-              <span class="input-group-text" id="basic-addon1">@</span>
+              <span class="input-group-text" id="basic-addon1">Size</span>
             </div>
-            <input type="text" class="form-control" placeholder="Size" aria-label="Username"
+            <input type="text" class="form-control" onkeyup="success()" placeholder="Size" id="textchange1" aria-label="Username"
               aria-describedby="basic-addon1">
           </div>
           <div class="input-group mb-3">
             <div class="input-group-prepend">
-              <span class="input-group-text" id="basic-addon1">@</span>
+              <span class="input-group-text" id="basic-addon1">Price</span>
             </div>
-            <input type="text" class="form-control" placeholder="Price" aria-label="Username"
+            <input type="text" class="form-control" onkeyup="success()" id="textchange" placeholder="Price" aria-label="Username"
               aria-describedby="basic-addon1">
           </div>
           <div class="input-group mb-3">
-            <button class="btn btn-primary">Add</button>
+            <button class="btn btn-primary" id="addb">Add</button>
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Continue</button>
+          <button type="button" id="con2" class="btn btn-secondary" data-dismiss="modal" disabled>Continue</button>
         </div>
       </div>
     </div>
@@ -328,23 +327,23 @@
         <div class="modal-body">
           <div class="input-group mb-3">
             <div class="input-group-prepend">
-              <span class="input-group-text" id="basic-addon1">@</span>
+              <span class="input-group-text" id="basic-addon1">Section Name</span>
             </div>
-            <input type="text" class="form-control" placeholder="Section name" id="sectionName" aria-label="Username"
+            <input type="text" class="form-control" onkeyup="success()" placeholder="Section Name" id="sectionName" aria-label="Username"
               aria-describedby="basic-addon1">
           </div>
           <div class="input-group mb-3">
             <div class="input-group-prepend">
-              <span class="input-group-text" id="basic-addon1">@</span>
+              <span class="input-group-text" id="basic-addon1">Food Name</span>
             </div>
-            <input type="text" class="form-control" placeholder="Food name" id="newObjectName" aria-label="Username"
+            <input type="text" class="form-control" onkeyup="success()" placeholder="Food Name" id="newObjectName" aria-label="Username"
               aria-describedby="basic-addon1">
           </div>
           <div class="input-group mb-3">
             <div class="input-group-prepend">
-              <span class="input-group-text" id="basic-addon1">@</span>
+              <span class="input-group-text" id="basic-addon1">Food Description</span>
             </div>
-            <input type="text" class="form-control" placeholder="Food description" id="newObjectDescription"
+            <input type="text" class="form-control" onkeyup="success()" placeholder="Food Description" id="newObjectDescription"
               aria-label="Username" aria-describedby="basic-addon1">
           </div>
           <div class="input-group mb-3">
@@ -352,13 +351,13 @@
             <ul>
               <li>
                 <button class="btn btn-primary" id="onesize" data-dismiss="modal" data-toggle="modal"
-                  data-target="#exampleModa32">One size</button>
+                  data-target="#exampleModa32" disabled>One size</button>
                 <script src="/fireabse/editor/addFood.js"></script>
 
               </li>
               <li>
                 <button class="btn btn-primary" id="multisize" data-dismiss="modal" data-toggle="modal"
-                  data-target="#exampleModa31">Multi size</button>
+                  data-target="#exampleModa31" disabled>Multi size</button>
               </li>
             </ul>
           </div>
@@ -383,35 +382,35 @@
         <div class="modal-body">
           <div class="input-group mb-3">
             <div class="input-group-prepend">
-              <span class="input-group-text" id="basic-addon1">@</span>
+              <span class="input-group-text" id="basic-addon1">Section Name</span>
             </div>
-            <input type="text" class="form-control" placeholder="Section name" aria-label="Username"
+            <input type="text" class="form-control" onkeyup="success()" id="textchange5" placeholder="Section Name" aria-label="Username"
               aria-describedby="basic-addon1">
           </div>
           <div class="input-group mb-3">
             <div class="input-group-prepend">
-              <span class="input-group-text" id="basic-addon1">@</span>
+              <span class="input-group-text" id="basic-addon1">Food Name</span>
             </div>
-            <input type="text" class="form-control" placeholder="Food name" aria-label="Username"
+            <input type="text" class="form-control" onkeyup="success()" id="textchange4" placeholder="Food Name" aria-label="Username"
               aria-describedby="basic-addon1">
           </div>
           <div class="input-group mb-3">
             <ul>
               <li>
-                <button class="btn btn-primary" id="edit4" data-dismiss="modal" data-toggle="modal"
-                  data-target="#exampleModa441">Edit description</button>
+                <button class="btn btn-primary" id="editf" data-dismiss="modal" data-toggle="modal"
+                  data-target="#exampleModa441" disabled>Edit description</button>
               </li>
               <li>
-                <button class="btn btn-primary" id="size4" data-dismiss="modal" data-toggle="modal"
-                  data-target="#exampleModa42">Edit size</button>
+                <button class="btn btn-primary" id="sizef" data-dismiss="modal" data-toggle="modal"
+                  data-target="#exampleModa42" disabled>Edit size</button>
               </li>
               <li>
-                <button class="btn btn-primary" id="price4" data-dismiss="modal" data-toggle="modal"
-                  data-target="#exampleModa43">Edit price</button>
+                <button class="btn btn-primary" id="pricef" data-dismiss="modal" data-toggle="modal"
+                  data-target="#exampleModa43" disabled>Edit price</button>
               </li>
               <li>
-                <button class="btn btn-primary" id="add4" data-dismiss="modal" data-toggle="modal"
-                  data-target="#exampleModa44">Edit additions</button>
+                <button class="btn btn-primary" id="addf" data-dismiss="modal" data-toggle="modal"
+                  data-target="#exampleModa44" disabled>Edit additions</button>
               </li>
             </ul>
           </div>
@@ -756,12 +755,7 @@
   </div>
 
 
-
-
-
-
-
-
+  <script type="text/javascript" src="js/edit.js"></script>
   
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
