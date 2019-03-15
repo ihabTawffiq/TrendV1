@@ -31,20 +31,23 @@
 /*//////////////////////////////////////////////////////////////////
 [ RESTYLE TAG ]*/
 
-* {
+* 
+{
 	margin: 0px; 
 	padding: 0px; 
 	box-sizing: border-box;
 }
 
-body, html {
+body, html 
+{
 	height: 100%;
   font-family: Poppins-Regular, sans-serif;
   
 }
 
 /*---------------------------------------------*/
-a {
+a 
+{
 	font-family: Poppins-Regular;
 	font-size: 14px;
 	line-height: 1.7;
@@ -57,11 +60,13 @@ a {
   
 }
 
-a:focus {
+a:focus
+{
 	outline: none !important;
 }
 
-a:hover {
+a:hover 
+{
 	text-decoration: none;
   color: #a64bf4;
 }
@@ -101,15 +106,16 @@ a:hover {
     height: 90px;
 }
 
-
-.but span {
+.but span 
+{
   cursor: pointer;
   display: inline-block;
   position: relative;
   transition: 0.5s;
 }
 
-.but span:after {
+.but span:after 
+{
   content: '\00bb';
   position: absolute;
   opacity: 0;
@@ -118,18 +124,22 @@ a:hover {
   transition: 0.5s;
 }
 
-.but:hover span {
+.but:hover span 
+{
   padding-right: 25px;
 }
 
-.but:hover span:after {
+.but:hover span:after 
+{
   opacity: 1;
   right: 0;
 }
+
 .btn-primary
 {
   background-color: #f4511e;
 }
+
 .btn-primary:hover
 {
   background-color: #2b1008;
