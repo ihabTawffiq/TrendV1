@@ -1,6 +1,6 @@
 var email;
 var resturantName = 'poula`s';
-/*
+
 firebase.auth().onAuthStateChanged(
     function (user) {
         if (user != null) {
@@ -16,4 +16,3 @@ firebase.auth().onAuthStateChanged(
     });
 
 
-*/
