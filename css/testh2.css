@@ -8,7 +8,44 @@ img
   width: 20%;
   float: right;
 }
-.card
+
+.card 
 {
-  max-width:80% 
+  width: 100%;
+  margin-top: 10%;
+  background-color: rgba(0, 0, 0, 0.6);
+  
+}
+.card-header
+{
+  font-size: 50px;
+  color: rgba(255,0,0,0.9);
+}
+.card-body
+{
+  color: whitesmoke;
+}
+.card-title
+{
+  
+  font-size: 3rem;
+
+}
+.card-text
+{
+  
+  font-size: 2rem;
+}
+.btn-primary
+{
+  margin-top: 2rem;
+  min-width: 10%;
+  padding: 10px;
+  font-size: 30px;
+  margin-left: 25%;
+  background-color: rgba(0,0,0,0.6);
+}
+.btn-primary:hover
+{
+  background-color: rgba(255,0,0,0.6);
 }
