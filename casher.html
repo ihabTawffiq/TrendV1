@@ -1,0 +1,95 @@
+<html>
+
+<head>
+    <title>Casher</title>
+    <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyBzZd1NTfTwVjnfvWVdgaHhMOwKkh5TP-4",
+            authDomain: "trend-lab02.firebaseapp.com",
+            databaseURL: "https://trend-lab02.firebaseio.com",
+            projectId: "trend-lab02",
+            storageBucket: "trend-lab02.appspot.com",
+            messagingSenderId: "1024566719090"
+        };
+        firebase.initializeApp(config);
+    </script>
+<style>
+.but{
+    position: relative;
+    top:20%;
+    left:4%
+}
+</style>
+</head>
+<!--firebase init--------------------------------------------------------------------------------------------------------------------------->
+
+
+
+<body>
+
+    <script>
+        var numOfWindows = 10;
+
+        var arrayDiv = new Array();
+        var arrayButt = new Array();
+        var arrayBut = new Array();
+        var arraypre = new Array();
+
+        for (var i = 0; i < numOfWindows; i++) {
+            arrayDiv[i] = document.createElement('div');
+            arrayButt[i] = document.createElement('button');
+            arrayBut[i] = document.createElement('button');
+            arraypre[i] = document.createElement('pre');
+
+            arrayDiv[i].style.backgroundColor = "lightblue";
+            arrayDiv[i].style.height = 'auto';
+            arrayDiv[i].style.width = 'auto';
+            arrayDiv[i].style.margin = '20px';
+            arrayDiv[i].style.float = 'left';
+            arrayDiv[i].style.padding = '20px';
+            arrayDiv[i].style.borderRadius = "25px";
+            arrayDiv[i].className = 'block';
+            arrayDiv[i].textContent = i;
+            arrayDiv[i].id = 'block' + i;
+
+            arrayButt[i].style.width = '60px';
+            arrayButt[i].style.position = 'absolute';
+            arrayButt[i].className = 'but';
+            arrayButt[i].textContent = 'Accept';
+            arrayButt[i].id = 'accept' + i;
+            arrayButt[i].style.float = 'right';
+
+
+            arrayBut[i].style.width = 'auto';
+            arrayButt[i].style.position = 'absolute';
+            arrayBut[i].className = 'butt' + i;
+            arrayBut[i].textContent = 'Confirm';
+            arrayBut[i].id = 'confirm' + i;
+
+
+
+            arraypre[i].style.backgroundColor = 'black';
+            arraypre[i].style.color = 'white';
+            arraypre[i].style.width = 'auto';
+            arraypre[i].style.height = 'auto';
+
+            arraypre[i].style.float = 'top';
+            arraypre[i].className = 'pre' + i;
+            arraypre[i].id = 'sheet' + i
+            arraypre[i].textContent = 'INSIDE PRE';
+
+
+
+            document.body.appendChild(arrayDiv[i]).appendChild(arrayButt[i]);
+            document.body.appendChild(arrayDiv[i]).appendChild(arraypre[i]);
+            document.body.appendChild(arrayDiv[i]).appendChild(arrayBut[i]);
+        }
+    </script>
+    
+    <script src="/fireabse/casher/casher.js"></script>
+
+</body>
+
+</html>

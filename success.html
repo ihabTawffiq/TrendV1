@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyBzZd1NTfTwVjnfvWVdgaHhMOwKkh5TP-4",
+            authDomain: "trend-lab02.firebaseapp.com",
+            databaseURL: "https://trend-lab02.firebaseio.com",
+
+        };
+        firebase.initializeApp(config);
+    </script>
+</head>
+<script>var user = firebase.auth().currentUser;
+
+
+    //document.getElementById("delete").addEventListener("click", deleteacc);
+    function deleteacc() {
+        user.delete().then(function () {
+            Console.log(" User deleted.")
+
+        }).catch(function (error) {
+            console.log("An error happened Deleting")
+        });
+    }
+
+
+    var name, email, photoUrl, uid, emailVerified;
+
+
+    firebase.auth().onAuthStateChanged(function (user) {
+        if (user) {
+            user.updateProfile({
+                displayName: "Jane Q. User",
+            }).then(function () {
+                // Profile updated successfully!
+                // "Jane Q. User"
+                // "https://example.com/jane-q-user/profile.jpg"
+            }, function (error) {
+                // An error happened.
+            });
+            if (user.displayName == "null") { console.log("555555555555555555") }
+            name = user.displayName;
+            email = user.email;
+            photoUrl = user.photoURL;
+            emailVerified = user.emailVerified;
+            uid = user.uid;
+            console.log("user: " + name, email, uid)
+            document.getElementById("userInfo").innerHTML = "user Name: " + name + " ,E-mail: " + email + " ,UserID: " + uid
+        } else {
+            console.log("on auth user faild")
+        }
+    });
+
+    //document.getElementById("logout").addEventListener("click", logoutt);
+    function logoutt() {
+        firebase.auth().signOut().then(function () {
+            console.log('Signed Out');
+            window.location.href = "https://trend-lab02.firebaseapp.com/index.html"
+        }, function (error) {
+            console.error('Sign Out Error', error);
+        });
+    }</script>
+
+<body>
+    <h1>success</h1>
+    <div id="userInfo"></div>
+    <input type="button" value="logout" id="logout">
+    <input type="button" value="Delete Account" id="delete">
+
+</body>

@@ -1,0 +1,90 @@
+.dropbtn {
+  background-color:rgba(0,0,0,0.6);
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  font-size: 100%;
+  font-style:oblique;
+  max-width: 22rem;
+  height: 5rem;
+
+}
+
+.dropdown {
+  float: left;
+  position: relative;
+  display: inline-block;
+  margin-left: 1%;
+  margin-right: 0%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  max-width: 22rem;
+  min-width: 10rem;
+  
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: black;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  width: 100%
+}
+
+.dropdown-content a {
+  color: whitesmoke;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  background-color: rgba(0, 0, 0, 0.6)
+}
+
+.dropdown-content a:hover {background-color:rgba(51, 37, 100, 0.2);}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: black;
+}
+.btn-primary
+{
+  min-width: 50%;
+  font-size: 30px;
+  margin-left: 25%;
+  background-color: rgba(0,0,0,0.6);
+}
+.btn-primary:hover
+{
+  background-color: rgba(255,0,0,0.6);
+}
+.card 
+{
+  margin-top: 10%;
+  background-color: rgba(0, 0, 0, 0.6)
+}
+.card-header
+{
+  font-size: 50px;
+  color: rgba(255,0,0,0.9);
+}
+.card-body
+{
+  color: whitesmoke;
+}
+.card-title
+{
+  
+  font-size: 3rem;
+
+}
+.card-text
+{
+  
+  font-size: 2rem;
+}
