@@ -1,0 +1,21 @@
+.nav
+{
+	margin-bottom: 10%;
+	height: 4rem;
+	background-color:rgba(0, 0, 0, 0.8);
+	width: 100%;
+}
+.nav-item
+{
+	width: 10rem;
+	height: 4rem;
+	background-color: rgba(255 , 0 , 0 , 0.4);
+	margin:  0 1rem 0 1rem ;
+	
+}
+.nav-link
+{
+	padding: 1px;
+	font-size: 2rem;
+	font-style: bold;
+}
