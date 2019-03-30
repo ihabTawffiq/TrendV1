@@ -1,20 +1,4 @@
-/*var requestskeys = [];
-var requestskeysRefs = [];
-var viewDiv = document.getElementById('sheet5');
-var request = firebase.database().ref().child('requests');
-request.on('value', snap => {
-    viewDiv.innerText = JSON.stringify(snap.val(), null, 3);
-    console.log(JSON.stringify(snap.val(), null, 3))
-    for (i = 0; i < snap.numChildren(); i++) {
-        requestskeys.push(Object.keys(snap.val())[i]);
-        requestskeysRefs.push('requests/' + requestskeys[i] + '/');
-    }
 
-    console.log(requestskeys);
-    console.log(requestskeysRefs)
-});
-*/
-var userId = '3a2s1d4f5g6h9j8k7';
 var resturantName;
 var tableName;
 var requestskeys = [];
@@ -24,9 +8,7 @@ var reqOBJ = [];
 var viewDiv;
 /*document.getElementById('user-newOrder-tableRequest').addEventListener('click', sendRequest);
 function sendRequest() {*/
-var zone = 'cairo';// document.getElementById('user-newOrder-tableRequest-zone').value
-tableName = '5'// document.getElementById('user-newOrder-tableRequest-tableName').value
-resturantName = 'poula`s'// document.getElementById('user-newOrder-tableRequest-resturantName').value
+
 requestRef = firebase.database().ref().child('requests');
 
 
@@ -73,3 +55,19 @@ requestRef.on('value', snap => {
 
 
 
+/*var requestskeys = [];
+var requestskeysRefs = [];
+var viewDiv = document.getElementById('sheet');
+var request = firebase.database().ref().child('requests');
+request.on('value', snap => {
+    viewDiv.innerText = JSON.stringify(snap.val(), null, 3);
+    console.log(JSON.stringify(snap.val(), null, 3))
+    for (i = 0; i < snap.numChildren(); i++) {
+        requestskeys.push(Object.keys(snap.val())[i]);
+        requestskeysRefs.push('requests/' + requestskeys[i] + '/');
+    }
+
+    console.log(requestskeys);
+    console.log(requestskeysRefs)
+});
+*/

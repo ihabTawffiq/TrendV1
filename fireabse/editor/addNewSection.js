@@ -19,7 +19,7 @@ function addNewSection() {
     //var optionRef = firebase.database().ref('resturants/' + resturantName + '/' + sectionName + '/' + objectName + '/option/')
     //var sectionRef = firebase.database().ref('resturants/' + resturantName + '/' + sectionName)
 
-    var sectionobj = { initialValue }
+    var sectionobj = { initialValue:'red' }
     objectDescriptionRef.set(sectionobj)
         .catch(error => {
             console.log(('error' + error.message))

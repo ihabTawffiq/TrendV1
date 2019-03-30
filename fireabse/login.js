@@ -45,7 +45,7 @@ function successRedirect(mark) {
         } else if (subemail[1] == "editor@trend") {
             window.location.href = '/editor.html';
         } else {
-            window.location.href = '/success.html';
+            window.location.href = '/chooseResturant.html';
         }
     } else if (mark != undefined) {
         window.location.href = '/login.html';

@@ -93,7 +93,7 @@ function submitCode() {
     window.confirmationResult.confirm(document.getElementById("verificationcode").value)
         .then(function (result) {
 
-            setTimeout(function () { window.location.href = '/success.html'; }, 3000);
+            setTimeout(function () { window.location.href = '/chooseResturant.html'; }, 3000);
         }, function (error) {
             alert(error.message);
 
@@ -112,7 +112,7 @@ function submitCode() {
 
 
 var uiConfig = {
-    signInSuccessUrl: '/success.html',
+    signInSuccessUrl: '/chooseResturant.html',
     signInOptions: [firebase.auth.GoogleAuthProvider.PROVIDER_ID,
     firebase.auth.FacebookAuthProvider.PROVIDER_ID,
     firebase.auth.GithubAuthProvider.PROVIDER_ID]
