@@ -1,6 +1,6 @@
-const resturantName = res;
-const resturantZone = area;
-const sectionsRef = firebase.database().ref().child('resturants/'+resturantName+'/menu/');
+const resturantName = sessionStorage.resturan;
+const resturantZone = sessionStorage.area;
+const sectionsRef = firebase.database().ref().child('resturants/' + resturantName + '/menu/');
 document.getElementById('resturantName').innerText = resturantName;
 document.getElementById('resturantData').innerText = resturantZone;
 var cont = document.getElementById('limiter')
@@ -13,8 +13,8 @@ sectionsRef.on('value', snap => {
         var p = document.createElement('p');
 
         ul.setAttribute('id', sectionNameArr[i]);
-        ul.setAttribute('class','list-unstyled')
-        p.setAttribute('class' ,'card-header')
+        ul.setAttribute('class', 'list-unstyled')
+        p.setAttribute('class', 'card-header')
 
         p.innerText = sectionNameArr[i];
         ul.appendChild(p)
@@ -45,35 +45,44 @@ sectionsRef.on('value', snap => {
                         var price = document.createElement('h6');
                         var size = document.createElement('h7');
                         var goBtn = document.createElement("BUTTON");
+                        var img = document.createElement("img");
 
 
-
+                        img.setAttribute('src', 'images/beverage-blue-breakfast-414551.jpg')
+                        img.setAttribute('class', 'mr-3')
                         foodName.setAttribute('class', "media-body");
                         price.setAttribute('id', 'class')
                         description.setAttribute('class', "media-body");
-                        li.setAttribute('id', foodNameArr[j]);
+                        li.setAttribute('id', foodNameArr[j] + '-' + sizesArr[k]);
                         li.setAttribute('size', sizesArr[k]);
+                        li.setAttribute('name', foodNameArr[j])
                         goBtn.setAttribute('class', 'btn btn-primary');
-                        goBtn.innerText = 'GO';
+                        goBtn.setAttribute('onclick', 'additem(id)');
+                        goBtn.setAttribute('id', foodNameArr[j] + '-' + sizesArr[k])
+                        goBtn.setAttribute('name', foodNameArr[j])
+                        goBtn.innerText = '+';
 
                         priceRef.on('value', snap4 => {
+                            goBtn.setAttribute('price', snap4.val())
                             li.setAttribute('price', snap4.val());
                             price.innerText = 'price : ' + snap4.val();
                         })
                         size.innerText = 'size : ' + sizesArr[k];
-                        console.log(sizesArr[k])
+                        goBtn.setAttribute('size', sizesArr[k])
+                        //console.log(sizesArr[k])
 
                         foodName.innerText = 'food Name : ' + foodNameArr[j];
 
                         DescriptionRef.on('value', snap => {
                             description.innerText = 'Description : ' + snap.val();
                         });
-
+                        li.appendChild(img)
                         li.appendChild(foodName);
                         li.appendChild(description);
                         li.appendChild(price);
                         li.appendChild(size);
                         li.appendChild(goBtn);
+
                         ul.appendChild(li);
                     }
                 })
