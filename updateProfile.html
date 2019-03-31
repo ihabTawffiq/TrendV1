@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+	<title>Profile | TREND</title>
+
+
+
+	<!--firebase init--------------------------------------------------------------------------------------------------------------------------->
+	<script src="https://www.gstatic.com/firebasejs/5.8.4/firebase.js"></script>
+	<script>
+		// Initialize Firebase
+		var config = {
+			apiKey: "AIzaSyBzZd1NTfTwVjnfvWVdgaHhMOwKkh5TP-4",
+			authDomain: "trend-lab02.firebaseapp.com",
+			databaseURL: "https://trend-lab02.firebaseio.com",
+			projectId: "trend-lab02",
+			storageBucket: "trend-lab02.appspot.com",
+			messagingSenderId: "1024566719090"
+		};
+		firebase.initializeApp(config);
+	</script>
+</head>
+
+<body>
+	<div id="data">
+		<input id="name"></input>
+		<input id="email"></input>
+		<button id="update">Update</button>
+		
+
+	</div>
+	<script src="/fireabse/user/updateProfile.js"></script>
+
+
+</body>
+
+</html>

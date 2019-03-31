@@ -1,28 +1,132 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  
+  <style>
+    body {
+      align-items: center;
+      background-color: #202020;
+      background-image: radial-gradient(10% 100% ellipse at bottom center, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 100%);
+      display: flex;
+      height: 100vh;
+      justify-content: center;
+      margin: 0;
+      padding: 0;
+      transition: background-color 2s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+
+    .button {
+      border: 2px solid #2e2e2e;
+      cursor: pointer;
+      letter-spacing: 0.2125rem;
+      overflow: hidden;
+      padding: 20px 30px;
+      position: relative;
+      text-align: center;
+      text-transform: uppercase;
+      transition:
+        background 5s cubic-bezier(0.19, 1, 0.22, 1),
+        border 1s cubic-bezier(0.19, 1, 0.22, 1),
+        color 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+      user-select: none;
+    }
+
+    .button a {
+      color: #969696;
+      font-family: "Varela Round";
+      text-decoration: none;
+    }
+
+    .button .mask {
+      background-color: #fff;
+      background-color: rgba(255, 255, 255, 0.5);
+      height: 100px;
+      position: absolute;
+      transform: translate3d(-120%, -50px, 0) rotate3d(0, 0, 1, 45deg);
+      transition: all 1.1s cubic-bezier(0.19, 1, 0.22, 1);
+      width: 200px;
+    }
+
+    .button .shift {
+      display: inline-block;
+      transition: all 1.1s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+
+    .button:hover {
+      background-color: rgba(255, 255, 255, 0.05);
+      border-color: #fff;
+      box-shadow: 0 0 5px rgba(255, 245, 245, 0.8);
+      transition: background 0s;
+    }
+
+    .button:hover a {
+      color: #fff;
+    }
+
+    .button:hover .mask {
+      background-color: #fff;
+      transform: translate3d(120%, -100px, 0) rotate3d(0, 0, 1, 90deg);
+    }
+
+    .button:hover .shift {
+      transform: translateX(5px);
+    }
+
+    .button:active {
+      background-color: #fff;
+    }
+
+    .button:active a {
+      color: #202020;
+    }
+
+    body.show {
+      background-color: #282828;
+    }
+
+    /*
+.button:hover {
+	background-image: url('http://.com/img/codepen/savvy.jpg');
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+*/
+  </style>
+  <script>
+    const body = document.body;
+    const btn = document.querySelectorAll('.button')[0];
+
+   
+    
+  </script>
 </head>
 
 <body>
-  <a href="signup.html">sign up</a>
-  <a href="login.html">Login</a>
-  <a href="ui.html">UI</a>
+  <link href='https://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+
+  <div class="button">
+    <a href="signup.html">
+      <span class="shift">sign up ›</span>
+    </a>
+    <div class="mask"></div>
+  </div>
+
+  <div class="button">
+    <a href="login.html">
+      <span class="shift">Login ›</span>
+    </a>
+    <div class="mask"></div>
+  </div>
+
+  <div class="button">
+      <a href="ui.html">
+      <span class="shift">404 ›</span>
+    </a>
+    <div class="mask"></div>
+  </div>
+
 
 </body>
 
 </html>
-
-<script src="https://www.gstatic.com/firebasejs/5.8.1/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyBzZd1NTfTwVjnfvWVdgaHhMOwKkh5TP-4",
-    authDomain: "trend-lab02.firebaseapp.com",
-    databaseURL: "https://trend-lab02.firebaseio.com",
-    
-  };
-  firebase.initializeApp(config);
-</script>
