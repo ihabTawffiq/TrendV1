@@ -5,6 +5,7 @@ document.getElementById('resturantName').innerText = resturantName;
 document.getElementById('resturantData').innerText = resturantZone;
 var cont = document.getElementById('limiter')
 
+
 sectionsRef.on('value', snap => {
 
     var sectionNameArr = Object.keys(snap.val());
@@ -94,3 +95,16 @@ sectionsRef.on('value', snap => {
     }
 
 })
+document.getElementById('purchase').addEventListener('click', addDelivaryOrder)
+function addDelivaryOrder() {
+
+    for (i = 0; i < delivaryOrder.length; i++) {
+        delivaryOrderObj[(delivaryOrder[i].split('/'))[0]] = (delivaryOrder[i].split('/'))[1];
+        console.log((delivaryOrder[i].split('/'))[0], (delivaryOrder[i].split('/'))[1])
+
+    }
+    delivaryOrderObj['total'] = total
+    delivaryOrderObj['status']='pinding'
+    delivaryOrderRef.push(delivaryOrderObj)
+
+}
