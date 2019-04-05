@@ -1,0 +1,66 @@
+.btn
+{
+  width: 80%;
+}
+
+.btn-primary
+{
+  margin-top: 2rem;
+  padding: 0.5rem;
+  font-size: 90%;
+  margin-left: 10%;
+  background-color: rgba(0,0,0,0.6);
+}
+.btn-primary:hover
+{
+  background-color: rgba(255,0,0,0.6);
+}
+.clientData
+{
+  max-width: 80%;
+  margin-top: 0%;
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  margin-left: 0%;
+}
+.clientName
+{
+  width: 80%;
+  font-size: 120%;
+}
+.clientName:hover
+{
+  color:rgba(255,0,0,0.6);
+}
+.clientEmail
+{
+  width: 80%;
+  font-size: 120%;
+}
+.clientEmail:hover
+{
+  color:rgba(255,0,0,0.6);
+}
+.clientPhone
+{
+  width: 80%;
+  font-size: 120%;
+}
+.clientPhone:hover
+{
+  color:rgba(255,0,0,0.6);
+}
+.data 
+{
+  margin: 5%;
+  padding: 5%;
+  max-width: 80%;
+  padding: 0.5rem;
+  font-size: 1.5rem;
+}
+.inputShape
+{
+  width: 100%;
+  background-color: rgba(255,255,255,0.6);
+  height: 30px;
+}

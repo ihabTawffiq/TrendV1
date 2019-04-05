@@ -5,6 +5,9 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
 	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
 	<title>Profile | TREND</title>
@@ -12,34 +15,311 @@
 
 
 	<!--firebase init--------------------------------------------------------------------------------------------------------------------------->
-	<script src="https://www.gstatic.com/firebasejs/5.8.4/firebase.js"></script>
-	<script>
-		// Initialize Firebase
-		var config = {
-			apiKey: "AIzaSyBzZd1NTfTwVjnfvWVdgaHhMOwKkh5TP-4",
-			authDomain: "trend-lab02.firebaseapp.com",
-			databaseURL: "https://trend-lab02.firebaseio.com",
-			projectId: "trend-lab02",
-			storageBucket: "trend-lab02.appspot.com",
-			messagingSenderId: "1024566719090"
-		};
-		firebase.initializeApp(config);
-	</script>
-</head>
+		<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico" />
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/profile.css">
+	<link rel="stylesheet" type="text/css" href="css/home.css">
+<!--===============================================================================================-->
+
 
 <body>
-	<div id="data">
-		<div id="name"></div>
-		<div id="email"></div>
-		<div id="phone"></div>
-		<button id="updateInfo">Update Information</button>
 
-		<button id="changePhone">Change/Add Phone</button>
-		<button id="changePassword">Change Password</button>
-		<button id="deleteAcc">Deacivate Your Account</button>
+	
+<div class="limiter">
+		<div class="container-login100"
+			style="background-image: url('images/profileBackground.jpg'); background-repeat: no-repeat ; background-attachment: fixed ; background-position: center center">
+			<div class="formcontainer">
+				<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54" style="float: left">
+						
+						<div class="dataContainer" id="data">
+							<span class="login100-form-title p-b-49">About You</span>
+							<div class="clientData">Your name :
+								<div id="name" class="clientName">Ihab Tawffiq</div>
+							</div>
+							<div class="clientData">Your email :
+								<div id="email"class="clientEmail">Ihab.tawffiq@outlook.com</div>
+							</div>
+							<div class="clientData">Your phone number :
+								<div id="phone" class="clientPhone">01066710216</div>
+							</div>
 
+							<!----Button to Update client Information----------------------------- -->
+							<!----Button to Update client Information----------------------------- -->
+							<!----Button to Update client Information----------------------------- -->
+							<!----Button to Update client Information----------------------------- -->
+							<button class="btn btn-primary" id="updateInfo"  data-toggle="modal"  type="button" data-target="#updateYourInfo">Update your information</button>
+
+							<!----Button to Update client phone Number----------------------------- -->
+							<!----Button to Update client phone Number----------------------------- -->
+							<!----Button to Update client phone Number----------------------------- -->
+							<!----Button to Update client phone Number----------------------------- -->
+							<button href="#" class="btn btn-primary"id="changePhone"data-toggle="modal"  type="button" data-target="#changeYourPhone">Change/Add phone</button>
+
+							<!----Button to Update client phone Password------------------------------->
+							<!----Button to Update client phone Password------------------------------->
+							<!----Button to Update client phone Password------------------------------->
+							<!----Button to Update client phone Password------------------------------->
+							<button href="#" class="btn btn-primary" id="changePassword" data-toggle="modal"  type="button" data-target="#changeYourPassword">Change Password</button>
+
+							<!----Button to Deactivate client account------------------------------->
+							<!----Button to Deactivate client account------------------------------->
+							<!----Button to Deactivate client account------------------------------->
+							<!----Button to Deactivate client account------------------------------->
+							<button href="#" class="btn btn-primary" id="deleteAcc" data-toggle="modal"  type="button" data-target="#deleteYourAccount">Deactivate your account</button>
+							<!-- Button trigger modal -->
+						</div>
+							<!-- Update your Informations -->
+							<div class="modal fade" id="updateYourInfo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+								<div class="modal-dialog" role="document">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h5 class="modal-title" id="exampleModalLabel">Update your informations</h5>
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+												<span aria-hidden="true">&times;</span>
+											</button>
+										</div>
+										<div class="modal-body">
+												<div id="data">
+														<div class="input-group mb-3">
+																<div class="input-group-prepend">
+																	<span class="input-group-text" id="basic-addon1">@</span>
+																</div>
+																<input type="text" class="form-control" id="name" placeholder="Target Section Name"
+																aria-label="Enter new name" aria-describedby="basic-addon1">
+															</div>			
+													</div>
+													<div class="input-group mb-3">
+															<div class="input-group-prepend">
+																<span class="input-group-text" id="basic-addon1">@</span>
+															</div>
+															<input type="text" class="form-control" id="email" placeholder="Target Section Name"
+															aria-label="Enter new email" aria-describedby="basic-addon1">
+														</div>			
+												</div>
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-primary" data-dismiss="modal" id="close">Close</button>
+											<button type="button" class="btn btn-primary" id="update">Save changes</button>
+										</div>
+									</div>
+								</div>
+							
+							
+							<!-- Change/Add phone -->
+							<div class="modal fade" id="changeYourPhone" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+									<div class="modal-dialog" role="document">
+										<div class="modal-content">
+											<div class="modal-header">
+												<h5 class="modal-title" id="exampleModalLabel">Update your phone number </h5>
+												<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+													<span aria-hidden="true">&times;</span>
+												</button>
+											</div>
+											<div class="modal-body">
+													<div id="data">	
+															<div class="input-group mb-3">
+																	<div class="input-group-prepend">
+																		<span class="input-group-text" id="basic-addon1">@</span>
+																	</div>
+																	<input type="text" class="form-control" id="phone" placeholder="Target Section Name"
+																	aria-label="Enter new phone" aria-describedby="basic-addon1">
+																</div>			
+
+														</div>
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+												<button id="updatePhone" data-toggle="modal" type="button" class="btn btn-primary" data-target="#updateYourPhone">Save changes</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							<!-- recaptcha-container -->
+							<div class="modal fade" id="updateYourPhone" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+									<div class="modal-dialog" role="document">
+										<div class="modal-content">
+											<div class="modal-header">
+												<h5 class="modal-title" id="exampleModalLabel">recaptcha-container</h5>
+												<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+													<span aria-hidden="true">&times;</span>
+												</button>
+											</div>
+											<div class="modal-body">
+													<div id="recaptcha-container"></div>
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-primary" data-dismiss="modal" id="close">Close</button>
+												<button type="button" class="btn btn-primary" id="update" data-toggle="modal"  type="button" data-target="#verify">Done</button>
+											</div>
+										</div>
+									</div>
+								</div>
+										
+										
+									<!-- verificationcode -->
+									<div class="modal fade" id="verify" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+											<div class="modal-dialog" role="document">
+												<div class="modal-content">
+													<div class="modal-header">
+														<h5 class="modal-title" id="exampleModalLabel">verificationcode</h5>
+														<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+															<span aria-hidden="true">&times;</span>
+														</button>
+													</div>
+													<div class="modal-body">
+															<input id="verificationcode">
+													</div>
+													<div class="modal-footer">
+														<button type="button" class="btn btn-primary" data-dismiss="modal" id="close">Close</button>
+														<button type="button" class="btn btn-primary" id="submit-code" data-toggle="modal"  type="button" data-target="#verify">Verify Code</button>
+													</div>
+												</div>
+											</div>
+										</div>
+								
+							<!-- Change Password -->
+							<div class="modal fade" id="changeYourPassword" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+									<div class="modal-dialog" role="document">
+										<div class="modal-content">
+											<div class="modal-header">
+												<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+												<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+													<span aria-hidden="true">&times;</span>
+												</button>
+											</div>
+											<div class="modal-body">
+													<div id="data">
+															<div class="input-group mb-3">
+																	<div class="input-group-prepend">
+																		<span class="input-group-text" id="basic-addon1">@</span>
+																	</div>
+																	<input type="text" class="form-control" id="newPassword" placeholder="Target Section Name"
+																	aria-label="Enter new Password" aria-describedby="basic-addon1">
+																</div>			
+															</div>
+											</div>
+											<div class="modal-footer">
+												<button id="update" type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+												<button type="button" class="btn btn-primary">Save changes</button>
+											</div>
+										</div>
+									</div>
+								</div>
+								
+								
+								
+							<!-- Deactivate your account -->
+							<div class="modal fade" id="deleteYourAccount" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+									<div class="modal-dialog" role="document">
+										<div class="modal-content">
+											<div class="modal-header">
+												<h5 class="modal-title" id="exampleModalLabel">Delete your account !</h5>
+												<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+													<span aria-hidden="true">&times;</span>
+												</button>
+											</div>
+											<div class="modal-body">
+												<h5>Are you sure you need to remove this account !!!</h5>
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-primary" data-dismiss="modal">No keep it</button>
+												<button type="button" class="btn btn-primary">Yes , i'm sure</button>
+											</div>
+										</div>
+									</div>
+								</div>
+								
+								
+						
+				</div>
+			</div>
+		
+	<!-- footer section ------------------------------------------------------------------------------------------------------------>
+
+	<section class="footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-4 col-md-4 footer-w3ls1">
+						<h3 style="padding: 15px 0 ; font-size: 50px">About Us</h3>
+						<p class="footer-p1" style="font-size: 15px">Lorem Ipsum is simply dummy text of the
+							printing and typesetting industry. Lorem Ipsum has been the industry's standard
+							dummy text ever since the 1500s, when an unknown printer took a galley of type and
+							scrambled it to make a type specimen
+							book. </p>
+						<p class="footer-p1">Lorem Ipsum is simply dummy text of the printing and typesetting
+							industry.</p>
+					</div>
+					<div class="col-lg-4 col-md-4 footer-pair">
+
+					</div>
+					<div class="col-lg-4 col-md-4 footer-w3ls3">
+						<h3 style="padding: 15px 0 ; font-size: 30px">Our Social Links</h3>
+						<ul class="social-icons">
+							<li>
+								<a href="#">
+									<i class="fa fa-facebook"></i>Facebook</a>
+							</li>
+							<li>
+								<a href="#">
+									<i class="fa fa-twitter"></i>Twitter</a>
+							</li>
+							<li>
+								<a href="#">
+									<i class="fa fa-instagram"></i>Instagram</a>
+							</li>
+							<li>
+								<a href="#">
+									<i class="fa fa-google-plus"></i>Google Plus</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<hr>
+				<div class="row">
+					<div class="col-lg-5 copy-pair">
+						<p class="copyright">&copy; 2019 Trend. All rights reserved | Design by
+							<a href="#" target="_blank">Pair Team</a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- /footer section ----------------------------------------------------------------------------------------------------------->
+		</div>
 	</div>
+		
+	<script src="/fireabse/user/updateProfile.js"></script>
 	<script src="/fireabse/user/profile.js"></script>
+	<script src="/fireabse/user/updatePhone.js"></script>
+	<script src="/fireabse/user/updatePassword.js"></script>
+					<!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script><!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 
 </body>
