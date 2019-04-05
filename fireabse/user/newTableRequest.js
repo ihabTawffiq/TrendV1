@@ -1,10 +1,11 @@
-var userId = '3a2s1d4f5g6h9555555555555555555555555555555555555555555555j8k7';
+
 var resturantName = sessionStorage.resturan;
 var zone = sessionStorage.area;
+var userId = sessionStorage.UID;
 var tableName;
 var requestskeys = [];
 var requestskeysRefs = [];
-var requestRef = firebase.database().ref().child('tableOreders');
+var requestRef = firebase.database().ref().child('tableOreders/'+userId);
 var reqOBJ = [];
 forListRef = firebase.database().ref().child('zones/'+zone+'/'+resturantName+'/tables');
 forListRef.on('value',snap=>{
@@ -28,28 +29,31 @@ function sendRequest() {
 
     
     //statRef.update({[tableName]: 'pinding'})
-    var obj = { UID: userId, [zone]: resturantName, [tableName]: 'pinding' }
+    var obj = {  [zone]: resturantName, [tableName]: 'pinding' }
+    //sessionStorage.table =tableName;
     console.log(zone, tableName, resturantName)
     //console.log('cccccccccccccccccccccccccccccccccccccccccccccccccccccc)')
-    requestRef.push(obj);
+    requestRef.set(obj);
 
 
 }
 var listenerRef ;//= firebase.database().ref().child('tableOreders/');
-requestRef.on('value', snap => {
+/*requestRef.on('value', snap => {
     var key = Object.keys(snap.val());
     console.log(sessionStorage.tabname,'ccc')
     for (i = 0; i < key.length; i++) {
-       listenerRef= firebase.database().ref().child('tableOreders/'+key[i]+'/')
-    }
-    
-    listenerRef.on('child_changed',snap=>{
         
+       
+    }*/
+    listenerRef= firebase.database().ref().child('tableOreders/'+userId+'/')
+    //console.log('key : '+key[0])
+    listenerRef.on('child_changed',snap=>{
+        console.log(snap.val())
         window.location.href='/menu-cart-table.html'
     })
     
 
-})
+//})
 
 
 

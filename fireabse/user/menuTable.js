@@ -1,5 +1,6 @@
 const resturantName = sessionStorage.resturan;
-var delivaryOrderRef = firebase.database().ref().child('delivaryOreders/')
+const uid = sessionStorage.UID;
+var tableOreders = firebase.database().ref().child('tableOreders/'+uid)
 
 const resturantZone = sessionStorage.area;
 const sectionsRef = firebase.database().ref().child('resturants/' + resturantName + '/menu/');
@@ -105,8 +106,17 @@ function addDelivaryOrder() {
         console.log((delivaryOrder[i].split('/'))[0], (delivaryOrder[i].split('/'))[1])
 
     }
+    console.log(delivaryOrder)
+    console.log(delivaryOrderObj)
+    
     delivaryOrderObj['total'] = total
-    delivaryOrderObj['status']='pinding'
-    delivaryOrderRef.push(delivaryOrderObj)
+    delivaryOrderObj['status'] = 'pinding'
+    tableOreders.push(delivaryOrderObj).catch(function(error){
+        alert(error.message)
+    })
+        .then(function () {
+            window.location.href = '/currentTableCartView.html'
+            //console.log('ssss'+sessionStorage.UID)
+        })
 
 }

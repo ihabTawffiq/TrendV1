@@ -1,3 +1,5 @@
+var userId = '3a2s1d4f5g6h955555j8k7';
+sessionStorage.UID = userId;
 const areaRef = firebase.database().ref().child('zones/');
 const resturantOptionList = document.getElementById('choose-resturant');
 

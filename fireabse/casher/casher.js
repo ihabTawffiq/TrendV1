@@ -21,9 +21,10 @@ numRef.on('value', snap => {
         var arraypre = new Array();
 
         arrayDiv[i] = document.createElement('div');
+
+        arraypre[i] = document.createElement('pre');
         arrayButt[i] = document.createElement('button');
         arrayBut[i] = document.createElement('button');
-        arraypre[i] = document.createElement('pre');
 
         arrayDiv[i].style.backgroundColor = "lightblue";
         arrayDiv[i].style.height = 'auto';
@@ -37,15 +38,15 @@ numRef.on('value', snap => {
         arrayDiv[i].id = 'block' + i;
 
         arrayButt[i].style.width = '60px';
-        arrayButt[i].style.position = 'absolute';
+        //arrayButt[i].style.position = 'absolute';
         arrayButt[i].className = 'but';
         arrayButt[i].textContent = 'Accept';
         arrayButt[i].id = 'accept-' + key[i];
-        arrayButt[i].style.float = 'right';
+        //arrayButt[i].style.float = 'right';
 
 
         arrayBut[i].style.width = 'auto';
-        arrayButt[i].style.position = 'absolute';
+        //arrayButt[i].style.position = 'absolute';
         arrayBut[i].className = 'butt' + i;
         arrayBut[i].textContent = 'Confirm';
         arrayBut[i].id = 'confirm-' + key[i];
@@ -59,15 +60,19 @@ numRef.on('value', snap => {
         arraypre[i].style.width = 'auto';
         arraypre[i].style.height = 'auto';
 
-        arraypre[i].style.float = 'top';
+        //arraypre[i].style.float = 'top';
         arraypre[i].className = 'pre' + i;
         arraypre[i].id = 'sheet' + key[i]
         arraypre[i].textContent = 'INSIDE PRE';
 
+        /************************************************************** */
 
+
+        /******************************************************************************* */
+
+        document.body.appendChild(arrayDiv[i]).appendChild(arraypre[i]);
 
         document.body.appendChild(arrayDiv[i]).appendChild(arrayButt[i]);
-        document.body.appendChild(arrayDiv[i]).appendChild(arraypre[i]);
         document.body.appendChild(arrayDiv[i]).appendChild(arrayBut[i]);
 
     }
@@ -90,9 +95,9 @@ requestRef.on('value', snap => {
         firebase.database().ref(requestskeysRefs[i]).on('value', snap2 => {
             var id;
             var status;
-            firebase.database().ref(requestskeysRefs[i] + '/UID').on('value', uid => {
-                id = (uid.val())
-            })
+            //firebase.database().ref(requestskeysRefs[i] + '/UID').on('value', uid => {
+                id = requestskeys[i]
+            //})
             firebase.database().ref(requestskeysRefs[i] + '/' + Object.keys(snap2.val())[0]).on('value', stat => {
                 status = (stat.val())
             })

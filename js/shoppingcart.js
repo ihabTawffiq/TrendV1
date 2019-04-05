@@ -6,7 +6,6 @@ itemName = []
 itemSize = []
 delivaryOrder = []
 delivaryOrderObj = []
-var delivaryOrderRef = firebase.database().ref().child('delivaryOreders/')
 function additem(id) {
   //var x = id[0]
   //console.log(id)
