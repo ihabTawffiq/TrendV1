@@ -1,0 +1,61 @@
+* {box-sizing: border-box;}
+ Style the input container */
+
+.feedback{
+
+    position: relative;
+    width: 50%;
+    right: 25%;
+}
+.input-group{
+    width: 60%;
+    margin: 10px;
+    position: relative;
+    left: 15%;
+}
+
+/* Style the form icons */
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  .bg-img {
+    /* The image used */
+    background-image: url("images/test.jpg");
+    
+    /* Control the height of the image */
+    min-height: 780px;
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  }
+  .containert {
+    position: relative;
+    width: 850px;
+    height: 650px;
+    max-width: 80%;
+    max-height:120% ;
+    padding: 16px;
+    left: 20%;
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+    color: white;
+    font-weight: bold;
+    border: 3px solid #f1f1f1;
+    padding: 20px;
+    box-shadow: 50px;
+    display: inline-block;
+    zoom: 1;
+  }
+  @media (max-width: 1000px){
+      .containert{
+        position: relative;
+        left: 10%;
+      }
+  }
+
+  

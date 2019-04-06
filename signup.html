@@ -60,11 +60,27 @@
 	<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
+
+	<link rel="stylesheet" type="text/css" href="css/reset.css"> 
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="js/modernizr.js"></script> <!-- Modernizr -->
 	<!--===============================================================================================-->
 </head>
 
 <body>
-
+	<header class="cd-header">
+		<a class="cd-menu-trigger" href="#main-nav">Menu<span></span></a>
+	</header>
+	<nav id="main-nav">
+		<ul>
+			<li><a href="index.html"><span>Home</span></a></li>
+			<li><a href="signup.html"><span>SignUp</span></a></li>
+			<li><a href="login.html"><span>Login</span></a></li>
+			<li><a href="contact.html"><span>Contact us</span></a></li>
+		</ul>
+		<a href="#0" class="cd-close-menu">Close<span></span></a>
+		
+	</nav>
 	<div class="limiter">
 		<div class="container-login100"
 			style="background-image: url('images/signupbackground.jpg'); background-repeat: no-repeat ; background-attachment: fixed ; background-position: center center">
@@ -150,17 +166,16 @@
 			</div>
 			<!-- footer section ---------------------------------------------------------------------------------------------->
 
-			<section class="footer">
+			<section class="footer"  style="background-color: rgba(58, 57, 63, 0.6); color:white">
 				<div class="container">
 					<div class="row">
 						<div class="col-lg-4 col-md-4 footer-w3ls1">
 							<h3 style="padding: 15px 0 ; font-size: 50px">About Us</h3>
-							<p class="footer-p1" style="font-size: 15px">Lorem Ipsum is simply dummy text of the printing and
+							<p class="footer-p1" style="font-size: 15px;color:white">Lorem Ipsum is simply dummy text of the printing and
 								typesetting industry. Lorem Ipsum has been the industry's standard
 								dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
 								a type specimen
 								book. </p>
-							<p class="footer-p1">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
 						</div>
 						<div class="col-lg-4 col-md-4 footer-pair">
 
@@ -190,7 +205,7 @@
 					<hr>
 					<div class="row">
 						<div class="col-lg-5 copy-pair">
-							<p class="copyright">&copy; 2019 Trend. All rights reserved | Design by
+							<p class="copyright" style="color:white">&copy; 2019 Trend. All rights reserved | Design by
 								<a href="#" target="_blank">Pair Team</a>
 							</p>
 						</div>
@@ -219,6 +234,7 @@
 	<script src="vendor/countdowntime/countdowntime.js"></script>
 	<!--===============================================================================================-->
 	<script src="js/main.js"></script>
+	<script src="js/mainv2.js"></script> 
 
 </body>
 
