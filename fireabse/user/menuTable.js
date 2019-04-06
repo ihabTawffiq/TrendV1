@@ -1,6 +1,6 @@
 const resturantName = sessionStorage.resturan;
 const uid = sessionStorage.UID;
-var tableOreders = firebase.database().ref().child('tableOreders/'+uid)
+var tableOreders = firebase.database().ref().child('zones/' + sessionStorage.area + '/' + sessionStorage.resturan + '/tableOreders/'+uid)
 
 const resturantZone = sessionStorage.area;
 const sectionsRef = firebase.database().ref().child('resturants/' + resturantName + '/menu/');

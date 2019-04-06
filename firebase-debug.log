@@ -1,0 +1,37 @@
+[debug] [2019-04-06T18:47:24.385Z] ----------------------------------------------------------------------
+[debug] [2019-04-06T18:47:24.389Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\ChainSomcker\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2019-04-06T18:47:24.389Z] CLI Version:   6.4.0
+[debug] [2019-04-06T18:47:24.389Z] Platform:      win32
+[debug] [2019-04-06T18:47:24.389Z] Node Version:  v10.15.1
+[debug] [2019-04-06T18:47:24.390Z] Time:          Sat Apr 06 2019 20:47:24 GMT+0200 (Eastern European Standard Time)
+[debug] [2019-04-06T18:47:24.390Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-04-06T18:47:24.407Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-04-06T18:47:24.409Z] > authorizing via signed-in user
+[debug] [2019-04-06T18:47:24.409Z] [iam] checking project trend-lab02 for permissions ["firebase.projects.get"]
+[debug] [2019-04-06T18:47:24.412Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-04-06T18:47:24.413Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-04-06T18:47:26.012Z] <<< HTTP RESPONSE 200
+[debug] [2019-04-06T18:47:26.155Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/trend-lab02:testIamPermissions  
+
+[debug] [2019-04-06T18:47:28.713Z] <<< HTTP RESPONSE 200
+[debug] [2019-04-06T18:47:28.716Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/trend-lab02  
+ 
+[debug] [2019-04-06T18:47:30.157Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\ChainSomcker'...
+[info] 
+[info] i  functions: Preparing to emulate functions.
+[debug] [2019-04-06T18:47:37.523Z] Fetching environment
+[debug] [2019-04-06T18:47:37.529Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/1024566719090:getServerAppConfig  
+ 
+[debug] [2019-04-06T18:47:37.537Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/1024566719090/clients/_:getWebAppConfig  
+ 
+[debug] [2019-04-06T18:47:38.571Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] +  hosting: Local server: http://localhost:5000
+[debug] [2019-04-06T18:47:39.288Z] <<< HTTP RESPONSE 200
+[debug] [2019-04-06T18:47:39.289Z] Starting @google-cloud/functions-emulator
+[debug] [2019-04-06T18:47:46.564Z] Parsing function triggers
+[info] i  functions: No HTTPS functions found. Use firebase functions:shell if you would like to emulate other types of functions.

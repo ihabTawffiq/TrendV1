@@ -19,7 +19,7 @@
   </script>
   <!--firebase init--------------------------------------------------------------------------------------------------------------------------->
   <style>
-    pre{
+    pre {
       position: relative;
       right: -40%;
       bottom: 62.5%;
@@ -29,9 +29,8 @@
       color: rgb(0, 0, 0);
       width: 55%;
       height: auto;
-      
+
     }
-  
   </style>
   <!--links----------------------------------------------------------------------------------------------------------------------------------->
 
@@ -57,7 +56,7 @@
 
   <link href="css/home.css" rel="stylesheet" type="text/css" />
   <!--links----------------------------------------------------------------------------------------------------------------------------------->
-  
+
 </head>
 
 <body>
@@ -285,6 +284,11 @@
             <input type="text" class="form-control" id="oneSizeObjectPrice" placeholder="Price" aria-label="Username"
               aria-describedby="basic-addon1">
           </div>
+          <div class="input-group mb-3">
+            <input type="file" id="myFile" multiple size="50" >
+            <p id="oneSizeImgStatus"></p>
+          </div>
+          <script src="/fireabse/editor/addimg.js"></script>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-primary" data-toggle="modal" id="addOnePrice" data-dismiss="modal"
@@ -329,7 +333,9 @@
             </div>
             <button class="btn btn-primary" id="newMultiSize">Add</button>
           </div>
-
+          <div class="input-group mb-3">
+            <input type="file" id="myFile" multiple size="50" >
+          </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-primary" data-toggle="modal" data-dismiss="modal"
@@ -372,7 +378,7 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" id="addAddition" class="btn btn-secondary" data-dismiss="modal">Continue</button>
+          <button type="button" onclick="location.reload()" class="btn btn-secondary" data-dismiss="modal">Continue</button>
         </div>
         <script src="/fireabse/editor/addFood.js"></script>
       </div>

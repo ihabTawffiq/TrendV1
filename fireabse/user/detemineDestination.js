@@ -6,6 +6,8 @@ const resturantOptionList = document.getElementById('choose-resturant');
 const areaOptionList = document.getElementById('choose-area');
 var options = areaOptionList.querySelectorAll("option");
 //console.log('444444444444' , areaRef.on('value',function(snap) { console.log(snap.val()) }))
+
+
 areaRef.on('value', snap => {
 
     var key = Object.keys(snap.val());
@@ -25,6 +27,7 @@ document.getElementById('confirmArea').addEventListener('click', fillResturant);
 
 function fillResturant() {
     const resturantRef = firebase.database().ref().child('zones/' + areaOptionList.value);
+    //sessionStorage.area = areaOptionList.value;
 
     resturantRef.on('value', snap => {
 
@@ -58,6 +61,9 @@ function fillService() {
 
             sessionStorage.area = areaOptionList.value;
             sessionStorage.resturan = resturantOptionList.value;
+            console.log('sessionStorage.area : ',sessionStorage.area)
+            console.log('sessionStorage.resturan : ',sessionStorage.resturan)
+
             //console.log(sessionStorage.area, sessionStorage.resturan)
             var div = document.createElement('div');
             div.setAttribute('area', sessionStorage.area);

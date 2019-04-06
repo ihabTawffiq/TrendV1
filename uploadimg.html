@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyBzZd1NTfTwVjnfvWVdgaHhMOwKkh5TP-4",
+            authDomain: "trend-lab02.firebaseapp.com",
+            databaseURL: "https://trend-lab02.firebaseio.com",
+            projectId: "trend-lab02",
+            storageBucket: "trend-lab02.appspot.com",
+            messagingSenderId: "1024566719090"
+        };
+        firebase.initializeApp(config);
+    </script>
+</head>
+
+<body onload="myFunction()">
+
+    <input type="file" id="myFile" multiple size="50" onchange="myFunction()">
+    <img src="" id='myimg' alt="">
+
+    <p id="demo"></p>
+
+    <script>
+        var storageRef = firebase.storage().ref().child('/test!!.PNG');
+
+        //var file;
+        function myFunction() {
+            var x = document.getElementById("myFile");
+            var txt = "";
+            if ('files' in x) {
+                if (x.files.length == 0) {
+                    txt = "Select one or more files.";
+                } else {
+                    for (var i = 0; i < x.files.length; i++) {
+                        var file = new Blob([JSON.stringify(x.files[i])]);
+                        file = x.files[i]
+                        console.log(file.size)
+
+                        storageRef.put(file).then(function (snapshot) {
+                            console.log('Uploaded a blob or file!');
+                            
+                            storageRef.getDownloadURL().then(function (url) {
+                                // Insert url into an <img> tag to "download"
+                                var img = document.getElementById('myimg');
+                                img.src = url;
+                                console.log(url)
+                                console.log('see')
+                            }).catch(function (error) {
+
+                                // A full list of error codes is available at
+                                // https://firebase.google.com/docs/storage/web/handle-errors
+                                switch (error.code) {
+                                    case 'storage/object-not-found':
+                                        // File doesn't exist
+                                        break;
+
+                                    case 'storage/unauthorized':
+                                        // User doesn't have permission to access the object
+                                        break;
+
+                                    case 'storage/canceled':
+                                        // User canceled the upload
+                                        break;
+
+
+
+                                    case 'storage/unknown':
+                                        // Unknown error occurred, inspect the server response
+                                        break;
+                                }
+                            });
+                        });
+                    }
+                }
+            }
+
+            document.getElementById("demo").innerHTML = txt;
+
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>

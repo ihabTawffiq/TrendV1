@@ -1,4 +1,5 @@
-var tableOrderRef = firebase.database().ref().child('tableOreders/');
+var tableOrderRef = firebase.database().ref().child('zones/' + sessionStorage.area + '/' + sessionStorage.resturan + '/tableOreders/' + sessionStorage.UID);
+
 var oreders = []
 var total;
 var sheet = []
@@ -10,62 +11,57 @@ sheetDiv.setAttribute('class', 'container')
 //var ordersRef = firebase.database().ref().child('tableOreders/'+key[i]);
 tableOrderRef.on('value', snap => {
     var ordersKey = Object.keys(snap.val());
-    //console.log('t' + sessionStorage.area)
+    console.log('sessionStorage.area : ' + sessionStorage.area)
+    console.log('sessionStorage.UID : ' + sessionStorage.UID)
+    console.log('sessionStorage.resturan : ' + sessionStorage.resturan)
+    console.log('snap.val()', snap.val())
+
     for (i = 0; i < ordersKey.length; i++) {
 
-        oreders.push(firebase.database().ref().child('tableOreders/' + ordersKey[i]));
+        oreders.push(firebase.database().ref().child('zones/' + sessionStorage.area + '/' + sessionStorage.resturan + '/tableOreders/' + sessionStorage.UID + '/' + ordersKey[i]));
 
         oreders[i].on('value', snap2 => {
-            var sheetkey = Object.keys(snap2.val());
-            for (j = 0; j < sheetkey.length; j++) {
-                if (sheetkey[j] != 'status' && sheetkey[j] != 'total' && sheetkey[j] != sessionStorage.tabname && sheetkey[j] != sessionStorage.area) {
+            var SpareX = Object.keys(snap2.val());
+            console.log('snap2.val()', snap2.val())
+            for (j = 0; j < SpareX.length; j++) {
+                if (SpareX[j] != 'status' && SpareX[j] != 'total' && SpareX[j] != sessionStorage.tabname && SpareX[j] != sessionStorage.area) {
 
-                    sheet.push(firebase.database().ref().child('tableOreders/' + ordersKey[i] + '/' + sheetkey[j]));
+                    //console.log(k)
+                    var dd = document.createElement('div');
+                    var foodName = document.createElement('div');
+                    var foodPrice = document.createElement('div');
+                    foodName.setAttribute("class", 'foodname')
+                    foodName.setAttribute("id", foodName[j])
+                    foodName.innerText = SpareX[j];
+
+                    foodPrice.setAttribute("class", 'foodprice')
+                    foodPrice.setAttribute("id", snap2.val()[SpareX[j]])
+                    foodPrice.innerText = snap2.val()[SpareX[j]]
+
+
+                    dd.appendChild(foodName)
+                    dd.appendChild(foodPrice)
+                    sheetDiv.appendChild(dd)
+
+
+                    //cnt++
+                    //console.log(cnt, SpareX.length - 2)
+                    // sheet.push(firebase.database().ref().child('zones/' + sessionStorage.area + '/' + sessionStorage.resturan + '/tableOreders/' + sessionStorage.UID + '/' + ordersKey[i] + '/' + SpareX[j]));
 
                 }
             }
-
-            var cnt = 0;
-            for (i = 0; i < sheet.length; i++) {
-                sheet[i].on('value', snap3 => {
-                    var foodnames = Object.keys(snap3.val());
-                    //console.log(snap3.val(),foodnames)
-
-                    for (k = 0; k < foodnames.length; k++) {
-
-                        //console.log(k)
-                        if (foodnames[k] != 'status' && foodnames[k] != 'total') {
-                            //console.log(k)
-                            var dd = document.createElement('div');
-                            var foodName = document.createElement('div');
-                            var foodPrice = document.createElement('div');
-                            foodName.setAttribute("class", 'foodname')
-                            foodName.setAttribute("id", foodName[k])
-                            foodName.innerText = foodnames[k];
-
-                            foodPrice.setAttribute("class", 'foodprice')
-                            foodPrice.setAttribute("id", snap3.val()[foodnames[k]])
-                            foodPrice.innerText = snap3.val()[foodnames[k]]
+            total = document.createElement('p');
+            total.setAttribute("class", 'total')
+            totalforall = totalforall + parseInt(snap2.val()['total'])
+            console.log(totalforall)
 
 
-                            dd.appendChild(foodName)
-                            dd.appendChild(foodPrice)
-                            sheetDiv.appendChild(dd)
 
-                        }
-                        //cnt++
-                        //console.log(cnt, sheetkey.length - 2)
 
-                    }
-                    total = document.createElement('p');
-                    total.setAttribute("class", 'total')
-                    totalforall = totalforall + parseInt(snap3.val()['total'])
-                    console.log(totalforall)
-
-                })
-
-            }
         })
+
+       
+
     }
 
     total.innerText = 'Toatal : ' + totalforall
