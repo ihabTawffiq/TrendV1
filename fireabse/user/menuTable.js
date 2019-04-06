@@ -1,6 +1,6 @@
 const resturantName = sessionStorage.resturan;
 const uid = sessionStorage.UID;
-var tableOreders = firebase.database().ref().child('zones/' + sessionStorage.area + '/' + sessionStorage.resturan + '/tableOreders/'+uid)
+var tableOreders = firebase.database().ref().child('zones/' + sessionStorage.area + '/' + sessionStorage.resturan + '/tableOreders/' + uid)
 
 const resturantZone = sessionStorage.area;
 const sectionsRef = firebase.database().ref().child('resturants/' + resturantName + '/menu/');
@@ -20,7 +20,9 @@ sectionsRef.on('value', snap => {
         ul.setAttribute('class', 'list-unstyled')
         p.setAttribute('class', 'card-header')
 
-        p.innerText = sectionNameArr[i];
+        if(sectionNameArr[i]!='Description'){
+            p.innerText = sectionNameArr[i];
+            }
         ul.appendChild(p)
         cont.appendChild(ul);
 
@@ -52,7 +54,46 @@ sectionsRef.on('value', snap => {
                         var img = document.createElement("img");
 
 
-                        img.setAttribute('src', 'images/beverage-blue-breakfast-414551.jpg')
+                        var storageRef = firebase.storage().ref().child(resturantName + '/' + sectionNameArr[i] + '/' + foodNameArr[j] + '.PNG');
+                        console.log('resturantName', resturantName)
+                        console.log('sectionNameArr[i]', i, sectionNameArr[i])
+                        console.log('foodNameArr[j]', j, foodNameArr[j])
+
+
+                        storageRef.getDownloadURL().then(url => {
+                            // Insert url into an <img> tag to "download"
+                            //var img = document.getElementById('myimg');
+                            sessionStorage.url = url;
+                            console.log(url)
+                            console.log('see')
+                            img.setAttribute('src', sessionStorage.url)
+                        }).catch(function (error) {
+
+                            // A full list of error codes is available at
+                            // https://firebase.google.com/docs/storage/web/handle-errors
+                            switch (error.code) {
+                                case 'storage/object-not-found':
+                                    // File doesn't exist
+                                    break;
+
+                                case 'storage/unauthorized':
+                                    // User doesn't have permission to access the object
+                                    break;
+
+                                case 'storage/canceled':
+                                    // User canceled the upload
+                                    break;
+
+
+
+                                case 'storage/unknown':
+                                    // Unknown error occurred, inspect the server response
+                                    break;
+                            }
+                        });
+
+
+                        sessionStorage.url = ""
                         img.setAttribute('class', 'mr-3')
                         foodName.setAttribute('class', "media-body");
                         price.setAttribute('id', 'class')
@@ -108,10 +149,10 @@ function addDelivaryOrder() {
     }
     console.log(delivaryOrder)
     console.log(delivaryOrderObj)
-    
+
     delivaryOrderObj['total'] = total
     delivaryOrderObj['status'] = 'pinding'
-    tableOreders.push(delivaryOrderObj).catch(function(error){
+    tableOreders.push(delivaryOrderObj).catch(function (error) {
         alert(error.message)
     })
         .then(function () {

@@ -133,6 +133,9 @@
       food</span></button>
   <button class="btn but" id="EditFood" type="button" data-toggle="modal" data-target="#exampleModa4"><span>Edit
       food</span></button>
+  <button class="btn but" id="AddSection" type="button" data-toggle="modal" data-target="#exampleModa5"><span>Add/Change
+      delivary fee</span></button>
+
   <!--Menu Edit Buttons----------------------------------------------------------------------------------------------------------------------->
   <!--************************************************************************
     **************************************************************************
@@ -285,7 +288,7 @@
               aria-describedby="basic-addon1">
           </div>
           <div class="input-group mb-3">
-            <input type="file" id="myFile" multiple size="50" >
+            <input type="file" id="myFile" multiple size="50">
             <p id="oneSizeImgStatus"></p>
           </div>
           <script src="/fireabse/editor/addimg.js"></script>
@@ -334,7 +337,7 @@
             <button class="btn btn-primary" id="newMultiSize">Add</button>
           </div>
           <div class="input-group mb-3">
-            <input type="file" id="myFile" multiple size="50" >
+            <input type="file" id="myFile" multiple size="50">
           </div>
         </div>
         <div class="modal-footer">
@@ -378,7 +381,8 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" onclick="location.reload()" class="btn btn-secondary" data-dismiss="modal">Continue</button>
+          <button type="button" onclick="location.reload()" class="btn btn-secondary"
+            data-dismiss="modal">Continue</button>
         </div>
         <script src="/fireabse/editor/addFood.js"></script>
       </div>
@@ -753,6 +757,41 @@
         <script src="/fireabse/editor/editPrice.js"></script>
       </div>
     </div>
+  </div>
+
+
+  <div class="modal fade" id="exampleModa5" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Add/Change delivary fee</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">@</span>
+            </div>
+            <input type="text" class="form-control" placeholder="area" aria-label="Username"
+              aria-describedby="basic-addon1" id="area">
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">@</span>
+            </div>
+            <input type="text" class="form-control" placeholder="Dilevary Fee" aria-label="Username"
+              aria-describedby="basic-addon1" id="delivaryFee">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" id="addDelivaryFee">Continue</button>
+        </div>
+      </div>
+    </div>
+    <script src="/fireabse/editor/addDelivaryFee.js"></script>
   </div>
   <!--************************************************************************
     **************************************************************************

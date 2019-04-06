@@ -19,8 +19,9 @@ sectionsRef.on('value', snap => {
         ul.setAttribute('id', sectionNameArr[i]);
         ul.setAttribute('class', 'list-unstyled')
         p.setAttribute('class', 'card-header')
-
+        if(sectionNameArr[i]!='Description'){
         p.innerText = sectionNameArr[i];
+        }
         ul.appendChild(p)
         cont.appendChild(ul);
 
