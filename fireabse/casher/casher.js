@@ -79,25 +79,26 @@ numRef.on('value', snap => {
 
 })
 
-var requestRef = firebase.database().ref().child('tableOreders/');
+var requestRef = firebase.database().ref().child('zones/' + zone + '/' + resturantName + '/tableOrders');
 requestRef.on('value', snap => {
-
-    console.log('dd', JSON.stringify(snap.val(), null, 3))
+    //console.log(snap.val())
+    //console.log('dd', JSON.stringify(snap.val(), null, 3))
     for (i = 0; i < snap.numChildren(); i++) {
         requestskeys.push(Object.keys(snap.val())[i]);
-        requestskeysRefs.push('tableOreders/' + requestskeys[i] + '/');
+        requestskeysRefs.push('zones/' + zone + '/' + resturantName + '/tableOrders/' + requestskeys[i] + '/');
     }
 
-    console.log('a', requestskeys);
-    console.log('b', requestskeysRefs)
-    console.log('c', requestskeysRefs[0], requestskeys.length)
+    //console.log('a', requestskeys);
+    //console.log('b', requestskeysRefs)
+    //console.log('c', requestskeysRefs[0], requestskeys.length)
     for (i = 0; i < requestskeys.length; i++) {
         firebase.database().ref(requestskeysRefs[i]).on('value', snap2 => {
             var id;
             var status;
             //firebase.database().ref(requestskeysRefs[i] + '/UID').on('value', uid => {
-                id = requestskeys[i]
+            id = requestskeys[i]
             //})
+            //console.log((requestskeysRefs[i] + '' + Object.keys(snap2.val())[0]))
             firebase.database().ref(requestskeysRefs[i] + '/' + Object.keys(snap2.val())[0]).on('value', stat => {
                 status = (stat.val())
             })
@@ -123,7 +124,7 @@ requestRef.on('value', snap => {
 
 function confirmOreder(id) {
     var tabname = id.split('-')[1]
-    console.log(tabname)
+    //console.log(tabname)
     var statRef = firebase.database().ref().child('zones/' + area + '/' + resturantName + '/tables/');
     statRef.update({ [tabname]: 'busy' })
 
@@ -131,9 +132,9 @@ function confirmOreder(id) {
     var reff = [];
     for (i = 0; i < requestskeys.length; i++) {
         //requestskeys.push(Object.keys(snap.val())[i]);
-        console.log(requestskeys)
-        reff.push(firebase.database().ref().child('tableOreders/' + requestskeys[i] + '/'));
-        console.log(reff)
+        //console.log(requestskeys)
+        reff.push(firebase.database().ref().child('zones/' + zone + '/' + resturantName + '/tableOrders/' + requestskeys[i] + '/'));
+        //console.log(reff)
         reff[i].update({ [tabname]: 'accepted' })
     }
 
@@ -150,19 +151,54 @@ console.log('55555555555555555555555555555555555')
 
 */
 
-/*var requestskeys = [];
-var requestskeysRefs = [];
+var requestskeys = [];
+var requestskeysRefs2 = [];
+var sheetRef = []
+
 var viewDiv = document.getElementById('sheet');
-var request = firebase.database().ref().child('requests');
+var request = firebase.database().ref().child('zones/' + zone + '/' + resturantName + '/tableOrders');
+console.log(zone, resturantName)
 request.on('value', snap => {
-    viewDiv.innerText = JSON.stringify(snap.val(), null, 3);
-    console.log(JSON.stringify(snap.val(), null, 3))
-    for (i = 0; i < snap.numChildren(); i++) {
-        requestskeys.push(Object.keys(snap.val())[i]);
-        requestskeysRefs.push('requests/' + requestskeys[i] + '/');
+    var uidkey = Object.keys(snap.val());
+    viewDiv.innerText += '-------------------------\n'//+ JSON.stringify(snap.val(), null, 3);
+    //console.log(key)
+    for (i = 0; i < uidkey.length; i++) {
+        requestskeysRefs2.push(firebase.database().ref().child('zones/' + zone + '/' + resturantName + '/tableOrders/' + uidkey[i] + '/'));
+    }
+    //console.log(requestskeysRefs2)
+    for (i = 0; i < requestskeysRefs2.length; i++) {
+        requestskeysRefs2[i].on('value', snap2 => {
+            var sheetkey = Object.keys(snap2.val());
+            for (j = 0; j < sheetkey.length; j++) {
+                if (snap2.val()[sheetkey[j]] != 'accepted' && snap2.val()[sheetkey[j]] != 'pinding') {
+                    sheetRef.push(firebase.database().ref().child('zones/' + zone + '/' + resturantName + '/tableOrders/' + uidkey[i] + '/' + sheetkey[j]))
+                    //sheetRef[j].on('value',snap3=>{
+                    //console.log(sheetkey)
+                    //})
+                }
+            }
+            for (j = 0; j < sheetRef.length; j++) {
+                sheetRef[j].on('value', snap3 => {
+                    var foodkey = Object.keys(snap3.val());
+
+                    for (k = 0; k < foodkey.length; k++) {
+                        if (foodkey[k] != 'total' && foodkey[k] != 'status') {
+                            console.log('xxxxx', foodkey[k] + ' : ' + snap3.val()[foodkey[k]])
+                            viewDiv.innerText += foodkey[k] + ' : ' + snap3.val()[foodkey[k]] + '\n'
+                        }
+                    }
+                    viewDiv.innerText += '\n'
+                    viewDiv.innerText += ' total : ' + snap3.val()['total']+'\n'
+                    viewDiv.innerText += '-------------------------\n'
+
+                })
+            }
+
+
+        })
     }
 
-    console.log(requestskeys);
+    //console.log(requestskeys);
     console.log(requestskeysRefs)
 });
-*/
+

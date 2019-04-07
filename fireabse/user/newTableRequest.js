@@ -5,7 +5,8 @@ var userId = sessionStorage.UID;
 var tableName;
 var requestskeys = [];
 var requestskeysRefs = [];
-var requestRef = firebase.database().ref().child('tableOreders/'+userId);
+
+var requestRef = firebase.database().ref().child('zones/'+zone+'/'+resturantName+'/tableOrders/'+userId);
 var reqOBJ = [];
 forListRef = firebase.database().ref().child('zones/'+zone+'/'+resturantName+'/tables');
 forListRef.on('value',snap=>{
@@ -45,7 +46,7 @@ var listenerRef ;//= firebase.database().ref().child('tableOreders/');
         
        
     }*/
-    listenerRef= firebase.database().ref().child('tableOreders/'+userId+'/')
+    listenerRef= firebase.database().ref().child('zones/'+zone+'/'+resturantName+'/tableOrders/'+userId)
     //console.log('key : '+key[0])
     listenerRef.on('child_changed',snap=>{
         console.log(snap.val())

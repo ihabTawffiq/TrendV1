@@ -35,3 +35,298 @@
 [debug] [2019-04-06T18:47:39.289Z] Starting @google-cloud/functions-emulator
 [debug] [2019-04-06T18:47:46.564Z] Parsing function triggers
 [info] i  functions: No HTTPS functions found. Use firebase functions:shell if you would like to emulate other types of functions.
+[debug] [2019-04-07T00:40:22.943Z] ----------------------------------------------------------------------
+[debug] [2019-04-07T00:40:22.946Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\ChainSomcker\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2019-04-07T00:40:22.947Z] CLI Version:   6.4.0
+[debug] [2019-04-07T00:40:22.947Z] Platform:      win32
+[debug] [2019-04-07T00:40:22.947Z] Node Version:  v10.15.1
+[debug] [2019-04-07T00:40:22.948Z] Time:          Sun Apr 07 2019 02:40:22 GMT+0200 (Eastern European Standard Time)
+[debug] [2019-04-07T00:40:22.948Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-04-07T00:40:22.970Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-04-07T00:40:22.971Z] > authorizing via signed-in user
+[debug] [2019-04-07T00:40:22.972Z] [iam] checking project trend-lab02 for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasedatabase.instances.update","firebasehosting.sites.update","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]
+[debug] [2019-04-07T00:40:22.974Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-04-07T00:40:22.975Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-04-07T00:40:23.683Z] <<< HTTP RESPONSE 200
+[debug] [2019-04-07T00:40:23.729Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/trend-lab02:testIamPermissions  
+
+[debug] [2019-04-07T00:40:25.087Z] <<< HTTP RESPONSE 200
+[debug] [2019-04-07T00:40:25.092Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/trend-lab02  
+ 
+[debug] [2019-04-07T00:40:26.035Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'trend-lab02'...
+[info] 
+[info] i  deploying database, storage, firestore, functions, hosting
+[info] i  database: checking rules syntax...
+[debug] [2019-04-07T00:40:37.856Z] >>> HTTP REQUEST PUT https://trend-lab02.firebaseio.com/.settings/rules.json?dryRun=true  
+ {
+  "rules": {
+    ".read": "auth != null",
+    ".write": "auth != null"
+  }
+}
+
+[debug] [2019-04-07T00:40:38.986Z] <<< HTTP RESPONSE 200
+[info] +  database: rules syntax for database trend-lab02 is valid
+[debug] [2019-04-07T00:40:38.992Z] >>> HTTP REQUEST GET https://appengine.googleapis.com/v1/apps/trend-lab02  
+ 
+[debug] [2019-04-07T00:40:41.125Z] <<< HTTP RESPONSE 200
+[info] i  storage: checking storage.rules for compilation errors...
+[debug] [2019-04-07T00:40:41.135Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/trend-lab02:test  
+
+[debug] [2019-04-07T00:40:43.314Z] <<< HTTP RESPONSE 200
+[info] +  storage: rules file storage.rules compiled successfully
+[info] i  firestore: checking firestore.rules for compilation errors...
+[info] i  firestore: reading indexes from firestore.indexes.json...
+[debug] [2019-04-07T00:40:43.331Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/trend-lab02:test  
+
+[debug] [2019-04-07T00:40:45.056Z] <<< HTTP RESPONSE 200
+[info] +  firestore: rules file firestore.rules compiled successfully
+[debug] [2019-04-07T00:40:45.060Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase serve --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "dependencies": {
+    "firebase-admin": "~7.0.0",
+    "firebase-functions": "^2.2.0"
+  },
+  "private": true
+}
+[info] i  functions: ensuring necessary APIs are enabled...
+[debug] [2019-04-07T00:40:45.062Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/cloudfunctions.googleapis.com/projectSettings/trend-lab02?view=CONSUMER_VIEW  
+ 
+[debug] [2019-04-07T00:40:45.062Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/runtimeconfig.googleapis.com/projectSettings/trend-lab02?view=CONSUMER_VIEW  
+ 
+[debug] [2019-04-07T00:40:49.936Z] <<< HTTP RESPONSE 200
+[debug] [2019-04-07T00:40:50.210Z] <<< HTTP RESPONSE 200
+[info] +  functions: all necessary APIs are enabled
+[debug] [2019-04-07T00:40:50.215Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/trend-lab02  
+ 
+[debug] [2019-04-07T00:40:52.113Z] <<< HTTP RESPONSE 200
+[debug] [2019-04-07T00:40:52.114Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/1024566719090:getServerAppConfig  
+ 
+[debug] [2019-04-07T00:40:53.453Z] <<< HTTP RESPONSE 200
+[debug] [2019-04-07T00:40:53.456Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/trend-lab02/versions  
+
+[debug] [2019-04-07T00:40:56.551Z] <<< HTTP RESPONSE 200
+[info] i  storage: uploading rules storage.rules...
+[debug] [2019-04-07T00:40:56.557Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/trend-lab02/rulesets  
+
+[debug] [2019-04-07T00:40:58.902Z] <<< HTTP RESPONSE 200
+[debug] [2019-04-07T00:40:58.903Z] [rules] created ruleset projects/trend-lab02/rulesets/c2e810f7-6e29-4d22-b01f-9c0af067e660
+[info] i  firestore: uploading rules firestore.rules...
+[debug] [2019-04-07T00:40:58.910Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/trend-lab02/rulesets  
+
+[debug] [2019-04-07T00:40:58.911Z] >>> HTTP REQUEST GET https://firestore.googleapis.com/v1beta2/projects/trend-lab02/databases/(default)/collectionGroups/-/indexes  
+ 
+[debug] [2019-04-07T00:41:00.656Z] <<< HTTP RESPONSE 200
+[debug] [2019-04-07T00:41:00.657Z] >>> HTTP REQUEST GET https://firestore.googleapis.com/v1beta2/projects/trend-lab02/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false  
+ 
+[debug] [2019-04-07T00:41:00.701Z] <<< HTTP RESPONSE 200
+[debug] [2019-04-07T00:41:00.701Z] [rules] created ruleset projects/trend-lab02/rulesets/f938b4ef-9782-4f7b-8860-da8be7433832
+[debug] [2019-04-07T00:41:01.629Z] <<< HTTP RESPONSE 200
+[info] +  firestore: deployed indexes in firestore.indexes.json successfully
+[info] i  functions: preparing functions directory for uploading...
+[debug] [2019-04-07T00:41:01.640Z] >>> HTTP REQUEST GET https://runtimeconfig.googleapis.com/v1beta1/projects/trend-lab02/configs  
+ 
+[debug] [2019-04-07T00:41:05.039Z] <<< HTTP RESPONSE 200
+[info] i  hosting[trend-lab02]: beginning deploy...
+[info] i  hosting[trend-lab02]: found 227 files in public
+[debug] [2019-04-07T00:41:05.463Z] [hosting] hash cache [cHVibGlj] load error: lines is not defined
+[debug] [2019-04-07T00:41:08.587Z] [hosting] hash cache [cHVibGlj] stored for 227 files
+[debug] [2019-04-07T00:41:08.588Z] [hosting][hash queue][FINAL]
+[debug] [2019-04-07T00:41:08.588Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/trend-lab02/versions/ba58360f97527faf:populateFiles  
+ <request body omitted>
+[debug] [2019-04-07T00:41:14.043Z] <<< HTTP RESPONSE 200
+[debug] [2019-04-07T00:41:14.113Z] [hosting][populate queue][FINAL]
+[debug] [2019-04-07T00:41:14.113Z] [hosting] uploads queued: 63
+[debug] [2019-04-07T00:41:25.554Z] [uploadQueue] Retrying task 3348ce096811221355a7141746e00e1f4862181fe18099f22e996dcb4987d405
+[debug] [2019-04-07T00:41:25.692Z] [uploadQueue] Retrying task 48ac79bd20c1a8273737751997b2323f8299def06c4eb3f9ac309252b5be7069
+[debug] [2019-04-07T00:41:25.747Z] [uploadQueue] Retrying task ea12540eadfda073bae9bd04e0861350ec70db4a78376bbbf71150629c56ff25
+[debug] [2019-04-07T00:41:25.749Z] [uploadQueue] Retrying task 32ce94c43fe208444d18dd51ac24d8ef0b6c67bc2e2e35bd54a58c419bc17750
+[debug] [2019-04-07T00:41:25.812Z] [uploadQueue] Retrying task 460fa3aa6f7224ed12c184c6d26773381088c4a64887dd13c7cb98466817747c
+[debug] [2019-04-07T00:41:25.849Z] [uploadQueue] Retrying task 03bd1b45a7af9a074bb7f86b7fec65db50255db2050c51112388372b85cf80a5
+[debug] [2019-04-07T00:41:25.865Z] [uploadQueue] Retrying task daf5da7bf9046fda7c0ac85ec15a570564e3185f19b496ea9918be009da08ef6
+[debug] [2019-04-07T00:41:27.207Z] [uploadQueue] Retrying task 9ae63e952fd70ce72dbb4b22dd833688721050fa30073cc2eadf598a497a2fd7
+[debug] [2019-04-07T00:41:28.409Z] [uploadQueue] Retrying task 06b8824208093f8b7b6a241da21cf429bb0f7ec0efa0c28247465dc795e7b846
+[debug] [2019-04-07T00:41:28.849Z] [uploadQueue] Retrying task cba4f72d1ce6130a810599f191a20e6b5c7d46265f1a755353848d5e8b7451af
+[debug] [2019-04-07T00:41:28.865Z] [uploadQueue] Retrying task 4ee1783f04eef1ba5d3440ab3260ce14fd4d0f803cf10dff38e4c03242c425e2
+[debug] [2019-04-07T00:41:28.875Z] [uploadQueue] Retrying task 950b22a9e8e3313daed9317c55e0ec929b14dca4ae06d22c0ef10800f4ec076a
+[debug] [2019-04-07T00:41:43.736Z] [uploadQueue] Retrying task ea12540eadfda073bae9bd04e0861350ec70db4a78376bbbf71150629c56ff25
+[debug] [2019-04-07T00:41:43.907Z] [uploadQueue] Retrying task 3348ce096811221355a7141746e00e1f4862181fe18099f22e996dcb4987d405
+[debug] [2019-04-07T00:41:49.223Z] [uploadQueue] Retrying task 41e7127ef9007ee085ca6d29b706ea0ec04b4109ae635cda40ca40c9e9a72630
+[debug] [2019-04-07T00:41:49.367Z] [uploadQueue] Retrying task 27cc55be269fbb4b3964528261645a17901d21567e0e3fdae9344dc2b0924341
+[debug] [2019-04-07T00:41:50.039Z] [uploadQueue] Retrying task fb8b739df8c49289dbde9d2c2dc363dadaf7437f2eea5f4b99873c130077365c
+[debug] [2019-04-07T00:41:50.054Z] [uploadQueue] Retrying task 451de0f97902055f3b7eecc6c39bf1245fd2133031ac83b1b317cb55ffd4e94f
+[debug] [2019-04-07T00:41:50.717Z] [uploadQueue] Retrying task 4ee1783f04eef1ba5d3440ab3260ce14fd4d0f803cf10dff38e4c03242c425e2
+[debug] [2019-04-07T00:41:51.916Z] [uploadQueue] Retrying task da54fd40842fb7aa70854e90048b3da1a84fdba22d10faac4a35a2d08d4d325e
+[debug] [2019-04-07T00:41:52.110Z] [uploadQueue] Retrying task 03bd1b45a7af9a074bb7f86b7fec65db50255db2050c51112388372b85cf80a5
+[debug] [2019-04-07T00:41:53.165Z] [uploadQueue] Retrying task 09d8dcdc3899cd3f3565237915b8298e3cb970a606361c99d2d734d26ec17fc5
+[debug] [2019-04-07T00:41:55.556Z] [uploadQueue] Retrying task 43c9c6b853f68ee0590242be05493a5af2cd235a3e7035bf56b67ebec55bda03
+[debug] [2019-04-07T00:42:01.040Z] [uploadQueue] Retrying task daf5da7bf9046fda7c0ac85ec15a570564e3185f19b496ea9918be009da08ef6
+[debug] [2019-04-07T00:42:07.684Z] [uploadQueue] Retrying task 32ce94c43fe208444d18dd51ac24d8ef0b6c67bc2e2e35bd54a58c419bc17750
+[debug] [2019-04-07T00:42:11.568Z] [uploadQueue] Retrying task cba4f72d1ce6130a810599f191a20e6b5c7d46265f1a755353848d5e8b7451af
+[debug] [2019-04-07T00:42:23.262Z] [uploadQueue] Retrying task 41e7127ef9007ee085ca6d29b706ea0ec04b4109ae635cda40ca40c9e9a72630
+[debug] [2019-04-07T00:42:23.316Z] [uploadQueue] Retrying task 27cc55be269fbb4b3964528261645a17901d21567e0e3fdae9344dc2b0924341
+[debug] [2019-04-07T00:42:27.386Z] [uploadQueue] Retrying task 451de0f97902055f3b7eecc6c39bf1245fd2133031ac83b1b317cb55ffd4e94f
+[debug] [2019-04-07T00:42:29.739Z] [uploadQueue] Retrying task cba4f72d1ce6130a810599f191a20e6b5c7d46265f1a755353848d5e8b7451af
+[debug] [2019-04-07T00:42:32.281Z] [uploadQueue] Retrying task da54fd40842fb7aa70854e90048b3da1a84fdba22d10faac4a35a2d08d4d325e
+[debug] [2019-04-07T00:42:37.681Z] [uploadQueue] Retrying task 43c9c6b853f68ee0590242be05493a5af2cd235a3e7035bf56b67ebec55bda03
+[debug] [2019-04-07T00:42:42.864Z] [uploadQueue] Retrying task daf5da7bf9046fda7c0ac85ec15a570564e3185f19b496ea9918be009da08ef6
+[debug] [2019-04-07T00:42:46.438Z] [uploadQueue] Retrying task 32ce94c43fe208444d18dd51ac24d8ef0b6c67bc2e2e35bd54a58c419bc17750
+[debug] [2019-04-07T00:43:01.675Z] [uploadQueue] Retrying task 41e7127ef9007ee085ca6d29b706ea0ec04b4109ae635cda40ca40c9e9a72630
+[debug] [2019-04-07T00:43:01.724Z] [uploadQueue] Retrying task 27cc55be269fbb4b3964528261645a17901d21567e0e3fdae9344dc2b0924341
+[debug] [2019-04-07T00:43:05.758Z] [uploadQueue] Retrying task 451de0f97902055f3b7eecc6c39bf1245fd2133031ac83b1b317cb55ffd4e94f
+[debug] [2019-04-07T00:43:07.580Z] [uploadQueue] Retrying task 32ce94c43fe208444d18dd51ac24d8ef0b6c67bc2e2e35bd54a58c419bc17750
+[debug] [2019-04-07T00:43:09.691Z] [uploadQueue] Retrying task cba4f72d1ce6130a810599f191a20e6b5c7d46265f1a755353848d5e8b7451af
+[debug] [2019-04-07T00:43:11.149Z] [uploadQueue] Retrying task da54fd40842fb7aa70854e90048b3da1a84fdba22d10faac4a35a2d08d4d325e
+[debug] [2019-04-07T00:43:20.285Z] [uploadQueue] Retrying task 43c9c6b853f68ee0590242be05493a5af2cd235a3e7035bf56b67ebec55bda03
+[debug] [2019-04-07T00:43:24.210Z] [uploadQueue] Retrying task daf5da7bf9046fda7c0ac85ec15a570564e3185f19b496ea9918be009da08ef6
+[debug] [2019-04-07T00:43:29.530Z] [uploadQueue] Retrying task 87a6140b6ebc9b2bf910d8fc28a44b07da68637e4858ac4883a3a57e8f79c668
+[debug] [2019-04-07T00:43:33.221Z] [uploadQueue] Retrying task b0e66c436b87499801b666eddfc46620db726ecee063629feed9526d11ff21bc
+[debug] [2019-04-07T00:43:40.160Z] [uploadQueue] Retrying task 41e7127ef9007ee085ca6d29b706ea0ec04b4109ae635cda40ca40c9e9a72630
+[debug] [2019-04-07T00:43:40.192Z] [uploadQueue] Retrying task 27cc55be269fbb4b3964528261645a17901d21567e0e3fdae9344dc2b0924341
+[debug] [2019-04-07T00:43:48.441Z] [uploadQueue] Retrying task daf5da7bf9046fda7c0ac85ec15a570564e3185f19b496ea9918be009da08ef6
+[debug] [2019-04-07T00:43:49.277Z] [uploadQueue] Retrying task 451de0f97902055f3b7eecc6c39bf1245fd2133031ac83b1b317cb55ffd4e94f
+[debug] [2019-04-07T00:43:51.523Z] [uploadQueue] Retrying task 32ce94c43fe208444d18dd51ac24d8ef0b6c67bc2e2e35bd54a58c419bc17750
+[debug] [2019-04-07T00:43:52.570Z] [uploadQueue] Retrying task da54fd40842fb7aa70854e90048b3da1a84fdba22d10faac4a35a2d08d4d325e
+[debug] [2019-04-07T00:43:55.511Z] [uploadQueue] Retrying task cba4f72d1ce6130a810599f191a20e6b5c7d46265f1a755353848d5e8b7451af
+[debug] [2019-04-07T00:44:04.566Z] [uploadQueue] Retries exhausted for task daf5da7bf9046fda7c0ac85ec15a570564e3185f19b496ea9918be009da08ef6:
+[debug] [2019-04-07T00:44:04.567Z] [hosting][upload queue][FINAL]
+[debug] [2019-04-07T00:44:08.365Z] [uploadQueue] Retrying task 43c9c6b853f68ee0590242be05493a5af2cd235a3e7035bf56b67ebec55bda03
+[debug] [2019-04-07T00:44:08.530Z] [uploadQueue] Retries exhausted for task 32ce94c43fe208444d18dd51ac24d8ef0b6c67bc2e2e35bd54a58c419bc17750:
+[debug] [2019-04-07T00:44:24.927Z] Error: socket hang up
+    at createHangUpError (_http_client.js:323:15)
+    at TLSSocket.socketOnEnd (_http_client.js:426:23)
+    at TLSSocket.emit (events.js:194:15)
+    at TLSSocket.EventEmitter.emit (domain.js:441:20)
+    at endReadableNT (_stream_readable.js:1103:12)
+    at process._tickCallback (internal/process/next_tick.js:63:19)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2019-04-07T00:44:46.453Z] ----------------------------------------------------------------------
+[debug] [2019-04-07T00:44:46.457Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\ChainSomcker\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2019-04-07T00:44:46.458Z] CLI Version:   6.4.0
+[debug] [2019-04-07T00:44:46.458Z] Platform:      win32
+[debug] [2019-04-07T00:44:46.458Z] Node Version:  v10.15.1
+[debug] [2019-04-07T00:44:46.459Z] Time:          Sun Apr 07 2019 02:44:46 GMT+0200 (Eastern European Standard Time)
+[debug] [2019-04-07T00:44:46.459Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-04-07T00:44:46.476Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-04-07T00:44:46.478Z] > authorizing via signed-in user
+[debug] [2019-04-07T00:44:46.478Z] [iam] checking project trend-lab02 for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasedatabase.instances.update","firebasehosting.sites.update","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]
+[debug] [2019-04-07T00:44:46.481Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/trend-lab02:testIamPermissions  
+
+[debug] [2019-04-07T00:44:49.404Z] <<< HTTP RESPONSE 200
+[debug] [2019-04-07T00:44:49.410Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/trend-lab02  
+ 
+[debug] [2019-04-07T00:44:50.059Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'trend-lab02'...
+[info] 
+[info] i  deploying database, storage, firestore, functions, hosting
+[info] i  database: checking rules syntax...
+[debug] [2019-04-07T00:44:55.960Z] >>> HTTP REQUEST PUT https://trend-lab02.firebaseio.com/.settings/rules.json?dryRun=true  
+ {
+  "rules": {
+    ".read": "auth != null",
+    ".write": "auth != null"
+  }
+}
+
+[debug] [2019-04-07T00:44:57.222Z] <<< HTTP RESPONSE 200
+[info] +  database: rules syntax for database trend-lab02 is valid
+[debug] [2019-04-07T00:44:57.229Z] >>> HTTP REQUEST GET https://appengine.googleapis.com/v1/apps/trend-lab02  
+ 
+[debug] [2019-04-07T00:44:59.241Z] <<< HTTP RESPONSE 200
+[info] i  storage: checking storage.rules for compilation errors...
+[debug] [2019-04-07T00:44:59.247Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/trend-lab02:test  
+
+[debug] [2019-04-07T00:45:01.026Z] <<< HTTP RESPONSE 200
+[info] +  storage: rules file storage.rules compiled successfully
+[info] i  firestore: checking firestore.rules for compilation errors...
+[info] i  firestore: reading indexes from firestore.indexes.json...
+[debug] [2019-04-07T00:45:01.039Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/trend-lab02:test  
+
+[debug] [2019-04-07T00:45:02.148Z] <<< HTTP RESPONSE 200
+[info] +  firestore: rules file firestore.rules compiled successfully
+[debug] [2019-04-07T00:45:02.155Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase serve --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "dependencies": {
+    "firebase-admin": "~7.0.0",
+    "firebase-functions": "^2.2.0"
+  },
+  "private": true
+}
+[info] i  functions: ensuring necessary APIs are enabled...
+[debug] [2019-04-07T00:45:02.159Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/cloudfunctions.googleapis.com/projectSettings/trend-lab02?view=CONSUMER_VIEW  
+ 
+[debug] [2019-04-07T00:45:02.160Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/runtimeconfig.googleapis.com/projectSettings/trend-lab02?view=CONSUMER_VIEW  
+ 
+[debug] [2019-04-07T00:45:05.311Z] <<< HTTP RESPONSE 200
+[info] +  functions: all necessary APIs are enabled
+[debug] [2019-04-07T00:45:05.452Z] <<< HTTP RESPONSE 200
+[debug] [2019-04-07T00:45:05.453Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/trend-lab02  
+ 
+[debug] [2019-04-07T00:45:06.633Z] <<< HTTP RESPONSE 200
+[debug] [2019-04-07T00:45:06.634Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/1024566719090:getServerAppConfig  
+ 
+[debug] [2019-04-07T00:45:07.877Z] <<< HTTP RESPONSE 200
+[debug] [2019-04-07T00:45:07.881Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/trend-lab02/versions  
+
+[debug] [2019-04-07T00:45:10.032Z] <<< HTTP RESPONSE 200
+[info] i  storage: uploading rules storage.rules...
+[debug] [2019-04-07T00:45:10.037Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/trend-lab02/rulesets  
+
+[debug] [2019-04-07T00:45:11.415Z] <<< HTTP RESPONSE 200
+[debug] [2019-04-07T00:45:11.416Z] [rules] created ruleset projects/trend-lab02/rulesets/8d732cc7-fe47-4f3c-bb4b-3ce61b3df34e
+[info] i  firestore: uploading rules firestore.rules...
+[debug] [2019-04-07T00:45:11.424Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/trend-lab02/rulesets  
+
+[debug] [2019-04-07T00:45:11.425Z] >>> HTTP REQUEST GET https://firestore.googleapis.com/v1beta2/projects/trend-lab02/databases/(default)/collectionGroups/-/indexes  
+ 
+[debug] [2019-04-07T00:45:12.519Z] <<< HTTP RESPONSE 200
+[debug] [2019-04-07T00:45:12.520Z] [rules] created ruleset projects/trend-lab02/rulesets/87461df3-4c20-4375-af77-5af4198e455d
+[debug] [2019-04-07T00:45:12.530Z] <<< HTTP RESPONSE 200
+[debug] [2019-04-07T00:45:12.531Z] >>> HTTP REQUEST GET https://firestore.googleapis.com/v1beta2/projects/trend-lab02/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false  
+ 
+[debug] [2019-04-07T00:45:13.509Z] <<< HTTP RESPONSE 200
+[info] +  firestore: deployed indexes in firestore.indexes.json successfully
+[info] i  functions: preparing functions directory for uploading...
+[debug] [2019-04-07T00:45:13.520Z] >>> HTTP REQUEST GET https://runtimeconfig.googleapis.com/v1beta1/projects/trend-lab02/configs  
+ 
+[debug] [2019-04-07T00:45:14.685Z] <<< HTTP RESPONSE 200
+[info] i  hosting[trend-lab02]: beginning deploy...
+[info] i  hosting[trend-lab02]: found 227 files in public
+[debug] [2019-04-07T00:45:15.068Z] [hosting] hash cache [cHVibGlj] load error: lines is not defined
+[debug] [2019-04-07T00:45:18.020Z] [hosting] hash cache [cHVibGlj] stored for 227 files
+[debug] [2019-04-07T00:45:18.021Z] [hosting][hash queue][FINAL]
+[debug] [2019-04-07T00:45:18.021Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/trend-lab02/versions/86e1bf8f5f9eb9f0:populateFiles  
+ <request body omitted>
+[debug] [2019-04-07T00:45:28.438Z] <<< HTTP RESPONSE 200
+[debug] [2019-04-07T00:45:28.453Z] [hosting][populate queue][FINAL]
+[debug] [2019-04-07T00:45:28.453Z] [hosting] uploads queued: 7
+[debug] [2019-04-07T00:50:29.043Z] [uploadQueue] Retrying task 87a6140b6ebc9b2bf910d8fc28a44b07da68637e4858ac4883a3a57e8f79c668
+[debug] [2019-04-07T00:52:38.600Z] [uploadQueue] Retrying task b0e66c436b87499801b666eddfc46620db726ecee063629feed9526d11ff21bc
+[debug] [2019-04-07T00:54:09.105Z] [uploadQueue] Retrying task 87a6140b6ebc9b2bf910d8fc28a44b07da68637e4858ac4883a3a57e8f79c668
+[debug] [2019-04-07T00:54:34.223Z] [uploadQueue] Retrying task 87a6140b6ebc9b2bf910d8fc28a44b07da68637e4858ac4883a3a57e8f79c668
+[debug] [2019-04-07T00:58:54.548Z] [uploadQueue] Retrying task 87a6140b6ebc9b2bf910d8fc28a44b07da68637e4858ac4883a3a57e8f79c668
+[debug] [2019-04-07T00:59:20.950Z] [uploadQueue] Retrying task 87a6140b6ebc9b2bf910d8fc28a44b07da68637e4858ac4883a3a57e8f79c668
+[debug] [2019-04-07T01:00:16.451Z] [uploadQueue] Retrying task b0de627235d97117fac6e11560e62f820ec8ccb6ea4a45869faa08466e795eba

@@ -1,6 +1,6 @@
 const resturantName = sessionStorage.resturan;
 const uid = sessionStorage.UID;
-var tableOreders = firebase.database().ref().child('zones/' + sessionStorage.area + '/' + sessionStorage.resturan + '/tableOreders/' + uid)
+var tableOrders = firebase.database().ref().child('zones/' + sessionStorage.area + '/' + sessionStorage.resturan + '/tableOrders/' + uid)
 
 const resturantZone = sessionStorage.area;
 const sectionsRef = firebase.database().ref().child('resturants/' + resturantName + '/menu/');
@@ -152,7 +152,7 @@ function addDelivaryOrder() {
 
     delivaryOrderObj['total'] = total
     delivaryOrderObj['status'] = 'pinding'
-    tableOreders.push(delivaryOrderObj).catch(function (error) {
+    tableOrders.push(delivaryOrderObj).catch(function (error) {
         alert(error.message)
     })
         .then(function () {
