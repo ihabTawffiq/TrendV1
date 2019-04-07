@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+
+
+  <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyBzZd1NTfTwVjnfvWVdgaHhMOwKkh5TP-4",
+      authDomain: "trend-lab02.firebaseapp.com",
+      databaseURL: "https://trend-lab02.firebaseio.com",
+      storageBucket: "trend-lab02.appspot.com"
+
+    };
+    firebase.initializeApp(config);
+  </script>
+
+  <title>Testh</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--===============================================================================================-->
+  <link rel="icon" type="image/png" href="images/icons/favicon.ico" />
+  <!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+  <!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+  <!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+  <!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+  <!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+  <!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+  <!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+  <!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+  <!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="css/util.css">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <link rel="stylesheet" type="text/css" href="css/testh2.css">
+  
+        <!-- GLOBAL MANDATORY STYLES -->
+        <link href="http://fonts.googleapis.com/css?family=Hind:300,400,500,600,700" rel="stylesheet" type="text/css">
+        <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css"/>
+        <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+
+        <!-- PAGE LEVEL PLUGIN STYLES -->
+        <link href="css/animate.css" rel="stylesheet">
+        <link href="vendor/swiper/css/swiper.min.css" rel="stylesheet" type="text/css"/>
+        <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css"/>
+
+        <!-- THEME STYLES -->
+        <link href="css/layout.min.css" rel="stylesheet" type="text/css"/>
+
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="favicon.ico"/>x
+	
+	<!--===============================================================================================-->
+</head>
+
+<body id="body" data-spy="scroll" data-target=".header">
+
+  <div class="limiter">
+    <div class="container-login100"
+      style="background-image: url('images/test.jpg'); background-repeat: no-repeat ; background-attachment: fixed ; background-position: center center">
+  <!--========== HEADER ==========-->
+  <header class="header navbar-fixed-top" style="background-color: rgba(0, 0, 0, 0.99)">
+		<!-- Navbar -->
+		<nav class="navbar" role="navigation">
+				<div class="container">
+						<!-- Brand and toggle get grouped for better mobile display -->
+						<div class="menu-container js_nav-item">
+								<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+										<span class="sr-only">Toggle navigation</span>
+										<span class="toggle-icon"></span>
+								</button>
+
+								<!-- Logo -->
+								<div class="logo">
+										<a class="logo-wrap" href="#body">
+												<img class="logo-img logo-img-main" src="img/logo.png" alt="Asentus Logo">
+												<img class="logo-img logo-img-active" src="img/logo-dark.png" alt="Asentus Logo">
+										</a>
+								</div>
+								<!-- End Logo -->
+						</div>
+
+						<!-- Collect the nav links, forms, and other content for toggling -->
+						<div class="collapse navbar-collapse nav-collapse" >
+								<div class="menu-container">
+										<ul class="nav navbar-nav navbar-nav-right" >
+												<li class="js_nav-item nav-item"><a class="nav-item-child nav-item-hover" href="index.html" >Home</a></li>
+												<li class="js_nav-item nav-item" ><a class="nav-item-child nav-item-hover" href="login.html">Login</a></li>
+												<li class="js_nav-item nav-item"><a class="nav-item-child nav-item-hover" href="Signup.html">Signup</a></li>
+												<li class="js_nav-item nav-item"><a class="nav-item-child nav-item-hover" href="chooseResturant.html">Chose Resturant</a></li>
+												<li class="js_nav-item nav-item"><a class="nav-item-child nav-item-hover" href="profile.html">Profile</a></li>
+												<li class="js_nav-item nav-item"><a class="nav-item-child nav-item-hover" href="#contact">Contact</a></li>
+										</ul>
+								</div>
+						</div>
+						<!-- End Navbar Collapse -->
+				</div>
+		</nav>
+		<!-- Navbar -->
+</header>
+<!--========== END HEADER ==========-->
+
+
+
+      <div class="container">
+        <div class="card">
+        <div class="card" id="cart"></div>
+        <button id="purchase">Purchase</button>
+      </div>
+      
+        <script src="js/shoppingcart.js"></script>
+
+        <div class="card">
+          <div class="card-header" id="resturantName">
+            Featured
+          </div>
+          <div class="card-body" id="limiter">
+            <img src="images/beverage-blue-breakfast-414551.jpg" class="mr-3" alt="...">
+            <h5 class="card-title" id="resturantData">resturant</h5>
+            <!-----------<p class="card-text">Rsturant shit.</p>------------------------------------------------------------------------------------------------------------->
+
+          </div>
+        </div>
+      </div>
+      <div id="cross" arae="X" resturant="X"></div>
+
+      <script src="/fireabse/user/menuTable.js"></script>
+
+
+      <!------------------------------------------------------------------------------------------------------------------------>
+      <section class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-4 col-md-4 footer-w3ls1">
+              <h3 style="padding: 15px 0 ; font-size: 50px">About Us</h3>
+              <p class="footer-p1" style="font-size: 15px">Lorem Ipsum is simply dummy text of the
+                printing and typesetting industry. Lorem Ipsum has been the industry's standard
+                dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                scrambled it to make a type specimen
+                book. </p>
+              <p class="footer-p1">Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry.</p>
+            </div>
+            <div class="col-lg-4 col-md-4 footer-pair">
+
+            </div>
+            <div class="col-lg-4 col-md-4 footer-w3ls3">
+              <h3 style="padding: 15px 0 ; font-size: 30px">Our Social Links</h3>
+              <ul class="social-icons">
+                <li>
+                  <a href="#">
+                    <i class="fa fa-facebook"></i>Facebook</a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="fa fa-twitter"></i>Twitter</a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="fa fa-instagram"></i>Instagram</a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="fa fa-google-plus"></i>Google Plus</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-lg-5 copy-pair">
+              <p class="copyright">&copy; 2019 Trend. All rights reserved | Design by
+                <a href="#" target="_blank">Pair Team</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /footer section ----------------------------------------------------------------------------------------------------------->
+
+    </div>
+  </div>
+
+
+  <div id="dropDownSelect1"></div>
+
+  <!--===============================================================================================-->
+  <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+  <!--===============================================================================================-->
+  <script src="vendor/animsition/js/animsition.min.js"></script>
+  <!--===============================================================================================-->
+  <script src="vendor/bootstrap/js/popper.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+  <!--===============================================================================================-->
+  <script src="vendor/select2/select2.min.js"></script>
+  <!--===============================================================================================-->
+  <script src="vendor/daterangepicker/moment.min.js"></script>
+  <script src="vendor/daterangepicker/daterangepicker.js"></script>
+  <!--===============================================================================================-->
+  <script src="vendor/countdowntime/countdowntime.js"></script>
+  <!--===============================================================================================-->
+  <script src="js/main.js"></script>
+
+
+
+  <!-- JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+  <!-- CORE PLUGINS -->
+  <script src="vendor/jquery.min.js" type="text/javascript"></script>
+  <script src="vendor/jquery-migrate.min.js" type="text/javascript"></script>
+  <script src="vendor/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+
+  <!-- PAGE LEVEL PLUGINS -->
+  <script src="vendor/jquery.easing.js" type="text/javascript"></script>
+  <script src="vendor/jquery.back-to-top.js" type="text/javascript"></script>
+  <script src="vendor/jquery.smooth-scroll.js" type="text/javascript"></script>
+  <script src="vendor/jquery.wow.min.js" type="text/javascript"></script>
+  <script src="vendor/swiper/js/swiper.jquery.min.js" type="text/javascript"></script>
+  <script src="vendor/magnific-popup/jquery.magnific-popup.min.js" type="text/javascript"></script>
+  <script src="vendor/masonry/jquery.masonry.pkgd.min.js" type="text/javascript"></script>
+  <script src="vendor/masonry/imagesloaded.pkgd.min.js" type="text/javascript"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsXUGTFS09pLVdsYEE9YrO2y4IAncAO2U&amp;callback=initMap" async defer></script>
+
+  <!-- PAGE LEVEL SCRIPTS -->
+  <script src="js/layout.min.js" type="text/javascript"></script>
+  <script src="js/components/wow.min.js" type="text/javascript"></script>
+  <script src="js/components/swiper.min.js" type="text/javascript"></script>
+  <script src="js/components/maginific-popup.min.js" type="text/javascript"></script>
+  <script src="js/components/masonry.min.js" type="text/javascript"></script>
+  <script src="js/components/gmap.min.js" type="text/javascript"></script>
+
+
+
+</body>
+
+</html>
